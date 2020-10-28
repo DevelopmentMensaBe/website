@@ -1,0 +1,15 @@
+<html xmlns:h="http://java.sun.com/jsf/html">
+<body>
+
+	#{userLogic.memberMessage}
+
+	<!-- Must be a JSF form element -->
+	<h:form>
+	
+		<!-- Must be a JSF commandLink element -->
+		<h:commandLink value="Logout" actionListener="#{userSession.logOut}" />
+		
+	</h:form>
+	
+</body>
+</html>

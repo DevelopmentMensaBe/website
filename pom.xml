@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>be.mensa.application</groupId>
+	<artifactId>website</artifactId>
+	<name>${project.artifactId}</name>
+	<packaging>war</packaging>
+	<version>1.0.0</version>
+
+	<properties>
+
+		<!-- - -->
+		<!-- Common dynamic properties -->
+		<!-- - -->
+
+		<loglevel.root>debug</loglevel.root>
+		<loglevel.persistence>trace</loglevel.persistence>
+		<datasource>datasource-local</datasource>
+		<auth-method>FORM</auth-method>
+		<schema-generation>none</schema-generation>
+
+		<maven.compiler.target>14</maven.compiler.target>
+		<maven.compiler.source>14</maven.compiler.source>
+
+	</properties>
+
+	<dependencies>
+
+		<!-- Java Enterprise 8 -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Logging with log4j with slf4j as interface -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.30</version>
+		</dependency>
+
+		<!-- Development enhancement. Mandatory for runtime -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.16</version>
+		</dependency>
+
+		<!-- JPA metamodel generation -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>5.4.22.Final</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Extensionless URL management -->
+		<dependency>
+			<groupId>org.ocpsoft.rewrite</groupId>
+			<artifactId>rewrite-servlet</artifactId>
+			<version>3.4.4.Final</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<finalName>${project.artifactId}</finalName>
+
+		<resources>
+
+			<resource>
+
+				<directory>src/main/resources</directory>
+
+				<includes>
+					<include>**/*</include>
+				</includes>
+
+				<filtering>true</filtering>
+
+			</resource>
+
+		</resources>
+
+		<plugins>
+
+			<!-- Add JPA metamodel classes as source classes -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>
+									${project.build.directory}/generated-sources/annotations/
+								</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+</project>
