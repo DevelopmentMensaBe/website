@@ -1,7 +1,9 @@
 package be.mensa.application.website.business.logic;
 
+import javax.annotation.Resource;
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.inject.Named;
 
@@ -17,15 +19,18 @@ import javax.inject.Named;
 @Stateless
 public class UserLogic {
 
-	@RolesAllowed({ "member" })
-	public String getMemberMessage() {
-
-		return "Hey member";
-	}
+	@Resource
+	SessionContext sessionContext;
 
 	@PermitAll
 	public String getWelcomeMessage() {
 
-		return "Hey guest";
+		return "Welkom bezoeker";
+	}
+
+	@RolesAllowed({ "member" })
+	public String getMemberMessage() {
+
+		return "Hallo bezoeker " + sessionContext.getCallerPrincipal().getName();
 	}
 }

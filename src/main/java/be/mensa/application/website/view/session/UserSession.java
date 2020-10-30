@@ -10,6 +10,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import lombok.Getter;
+
 /**
  * Represents all security data for a user during a session.
  *
@@ -18,11 +20,22 @@ import javax.servlet.http.HttpSession;
  * @since 1.0.0
  *
  */
+@Getter
 @Named
 @SessionScoped
 public class UserSession implements Serializable {
 
 	private static final long serialVersionUID = -757261925450427516L;
+
+	private boolean loggedIn = false;
+
+	/**
+	 * Setting loggedIn flag to true
+	 */
+	public void login() {
+
+		loggedIn = true;
+	}
 
 	/**
 	 * Log out of application
@@ -31,6 +44,8 @@ public class UserSession implements Serializable {
 	 * @throws IOException
 	 */
 	public void logOut() throws ServletException, IOException {
+
+		loggedIn = false;
 
 		var externalContext = FacesContext.getCurrentInstance().getExternalContext();
 

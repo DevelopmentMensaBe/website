@@ -12,9 +12,11 @@
 <link rel="stylesheet" href="/website/design/style/sheet/bootstrap-override.css" />
 <link rel="stylesheet" href="/website/design/style/sheet/effects.css" />
 <link rel="stylesheet" href="/website/design/style/sheet/mensa.css" />
-<title>Welkom bij Mensa België!</title>
+<title>Mensa leden</title>
 </head>
 <body>
+
+	#{userSession.login()}
 
 	<nav class="navbar navbar-expand-sm sticky-top navbar-dark fadeInAndSlideInFromTop">
 
@@ -43,13 +45,14 @@
 			</ul>
 
 			<ul class="navbar-nav">
-				<li class="nav-item login"><a href="member" hidden="#{userSession.loggedIn ? 'hidden' : ''}" class="nav-link topBottomSlideIn">Aanmelden</a> <!-- Must be a JSF form element -->
-					<h:form rendered="#{userSession.loggedIn}">
+				<li class="nav-item login">
+					<!-- Must be a JSF form element --> <h:form>
 
 						<!-- Must be a JSF commandLink element -->
 						<h:commandLink value="Afmelden" actionListener="#{userSession.logOut}" styleClass="nav-link topBottomSlideIn" />
 
-					</h:form></li>
+					</h:form>
+				</li>
 				<li class="nav-item login-icon"><a class="nav-link nav-icon-language" href="#"> <img src="/website/design/layout/image/icon/login.png" width="25"
 						height="25" alt="" loading="lazy" /></a></li>
 			</ul>
@@ -60,11 +63,13 @@
 
 	<section class="container-fluid text-center fadeInAndSlideInFromBottom">
 
-		<h1>
-			Welkom bij <em><span class="primary">Mensa</span></em>
-		</h1>
+		<h1>Activiteiten</h1>
 
-		<p>#{userLogic.welcomeMessage}</p>
+	</section>
+
+	<section class="container-fluid text-center">
+
+		<img src="/website/design/layout/image/coming-soon.png" width="500" height="500" alt="" loading="lazy" />
 
 	</section>
 
