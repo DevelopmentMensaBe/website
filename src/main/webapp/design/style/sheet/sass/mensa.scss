@@ -1,0 +1,139 @@
+/**********************************************************************************************************************************************************************************
+*
+* Custom style sheet containing overrides specific for the application. 
+*
+**********************************************************************************************************************************************************************************/
+
+@import url(unquote("\"\#{resource[\"design:style/sheet/cjm-huisstijl.css\"]}\""));
+
+$color3: unquote("\#{web.color3}");
+
+/**********************************************************************************************************************************************************************************
+* Topstukken header & footer
+**********************************************************************************************************************************************************************************/
+
+/* Add extra border in case menu is not present, serving implicitly as a border */
+.logoBorder {
+  border-bottom: solid lightgray 0.08em;
+}
+
+.displayFooter .ui-panel-footer {
+	/* Give more height for titles with large text */
+  	height: 4em;
+  	text-align: center;
+}
+
+/**********************************************************************************************************************************************************************************
+* Welcome page 
+**********************************************************************************************************************************************************************************/
+/* Primefaces gmap always needs a fixed height */
+.gmap {
+  height: 600px;
+}
+
+/* Style gmap pop up window */
+.gmapwindow {
+  text-align: center;
+  width: 15em;
+  line-height: 1.4em;
+}
+
+/* Reset gmap info for scrolling to center */
+p.gm-style-pbt {
+	text-align: center;
+}
+
+/* Animate content of welcome page on load */
+.fadeInBottom {
+  animation-name: fadeInBottom;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+/**********************************************************************************************************************************************************************************
+* Search page 
+**********************************************************************************************************************************************************************************/
+
+/* Disable input switch for mobile view because list view isn't rendered nicely on small screens */
+@media (max-width: 640px) {
+	.inputSwitch {
+		display: none;
+	}
+}
+
+/* Improve responsiveness of images in search page */
+@media (min-width: 641px) {
+	.gridImage {
+		max-width: 100%;
+		max-height: 300px;
+		min-height: 200px;
+	}
+}
+
+/* Align all images and links in center on data grid of search page */
+#showPiecesGrid.ui-datagrid .ui-datagrid-column img, #showPiecesGrid.ui-datagrid .ui-datagrid-column a {
+  margin: 0 auto;
+}
+
+#showPiecesGrid .ui-panelgrid .ui-grid-responsive .ui-panelgrid-cell {
+	justify-content: center;
+}
+
+.ui-datagrid .ui-datagrid-header, .ui-datagrid .ui-datagrid-footer {
+	padding: .5em 0;
+}
+
+/**********************************************************************************************************************************************************************************
+* Varia 
+**********************************************************************************************************************************************************************************/
+@media (max-width: 640px) {
+  
+  	/* 	Reset header menu margin to center because in mobile view we also want header menu always centered */
+  	.marginLeftAuto {
+    	margin-left: inherit;
+  	}
+  
+	/* Reset alignment to center, for large screens it is set to left */
+ 	#imageDetailShowPiece label, #imageDetailShowPiece a {
+	 	text-align: center;
+	}
+	
+	.ui-panel .ui-panel-title {
+		margin: auto;
+	}
+}
+
+@media (min-width: 641px) {
+	
+	/* 	Override because some primefaces combined classes can have higher specificity for margin */
+	.marginLeftAuto {
+		margin-left: auto !important;
+	}
+
+	/* For large texts who should align right, but with wrapping displays centered. Force them back to right */
+	.largeLabelCenterMobile {
+		text-align: right;
+	}
+}
+
+.disclaimerList{
+	list-style: circle; 
+	padding-left: 3em;
+	text-align: justify;
+	line-height: 1.4em;
+}

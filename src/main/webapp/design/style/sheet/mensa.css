@@ -1,0 +1,115 @@
+/* ----------------------------------------------------------------------------------------------  
+Common styling - Applicable to all pages
+-------------------------------------------------------------------------------------------------  */
+
+/* ----------------------------------------------- 
+Mensa fonts
+-------------------------------------------------- */
+
+/* Use this for global font styling */
+@font-face {
+	font-family: mensa;
+	src: url(/website/design/style/font/AvenirLTStd-Roman.otf);
+}
+
+/* Use this for page titles only */
+@font-face {
+	font-family: title;
+	src: url(/website/design/style/font/Adequate-ExtraLight.ttf);
+}
+
+/* ----------------------------------------------- 
+Html elements
+-------------------------------------------------- */
+
+/* Set global styles for document body */
+body {
+	color: #5e4c41;
+	font-family: mensa;
+	background: url('/website/design/layout/image/background/black-pattern.jpg') no-repeat center
+		center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+nav {
+    border-bottom: solid 0.02em #5e4c41;
+}
+
+/* Style the title of every page */
+h1 {
+	font-family: title;
+	border-bottom: .03em solid #00539C;
+	padding-bottom: .5em;
+}
+
+a:visited {
+	
+}
+
+a,a:visited,a:hover,a:active{
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+	position:relative;
+  transition:0.5s color ease;
+	text-decoration:none;
+}
+a:hover{
+	color:#5e4c41;
+}
+a.before:before,a.after:after{
+  content: "";
+  transition:0.5s all ease;
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  position:absolute;
+}
+a.before:before{
+  top:-0.50em;
+}
+a.after:after{
+  bottom:-0.45em;
+}
+a.before:before,a.after:after{
+  height:2px;
+  height:0.10rem;
+  width:0;
+  background:#00539C;
+}
+a.eigth:before{
+  left:0;
+}
+a.eigth:after{
+  right:0;
+}
+a.before:hover:before,a.after:hover:after{
+  width:100%;
+}
+
+/* ----------------------------------------------- 
+Effects
+-------------------------------------------------- */
+
+/* Add this class to the element to have a slide effect from The Bottom with an addional fade in effect */
+.fadeInBottom {
+	animation-name: fadeInBottom;
+	animation-duration: 2s;
+	animation-fill-mode: both;
+}
+
+@keyframes fadeInBottom {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		-ms-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+}
