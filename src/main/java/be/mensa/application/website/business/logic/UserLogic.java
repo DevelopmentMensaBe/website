@@ -31,6 +31,6 @@ public class UserLogic {
 	@RolesAllowed({ "member" })
 	public String getMemberMessage() {
 
-		return "Hallo bezoeker " + sessionContext.getCallerPrincipal().getName();
+		return "Hallo lid van Mensa: " + sessionContext.getCallerPrincipal().getName();
 	}
 }

@@ -1,0 +1,13 @@
+/* ----------------------------------------------------------------------------------------------  
+Finetunes all HTML 5 styles which lack correct display configuration without normalization sheets
+-------------------------------------------------------------------------------------------------  */
+
+/* Must have for every image to fit to the parent's container and simultaneously keep the dimensions ratio*/
+img {
+	max-width: 100%;;
+}
+
+/* Add pointer cursor to action elements */
+a, button {
+	cursor: pointer;
+}

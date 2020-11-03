@@ -2,6 +2,8 @@
 Common styling - Applicable to all pages
 -------------------------------------------------------------------------------------------------  */
 
+@import "bootstrap-mensa-variables";
+
 /* ----------------------------------------------- 
 Mensa fonts
 -------------------------------------------------- */
@@ -9,13 +11,13 @@ Mensa fonts
 /* Use this for global font styling */
 @font-face {
 	font-family: mensa;
-	src: url(/website/design/style/font/AvenirLTStd-Roman.otf);
+	src: url(/design/style/font/AvenirLTStd-Roman.otf);
 }
 
 /* Use this for page titles only */
 @font-face {
 	font-family: title;
-	src: url(/website/design/style/font/Adequate-ExtraLight.ttf);
+	src: url(/design/style/font/Adequate-ExtraLight.ttf);
 }
 
 /* ----------------------------------------------- 
@@ -24,9 +26,9 @@ Html elements
 
 /* Set global styles for document body */
 body {
-	color: #5e4c41;
+	color: $primary;
 	font-family: mensa;
-	background: url('/website/design/layout/image/background/black-pattern.jpg') no-repeat center center fixed;
+	background: url('/design/layout/image/background/black-pattern.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -35,37 +37,17 @@ body {
 
 /* Style the navigation bar */
 nav {
-	border-bottom: solid 0.02em #5e4c41;
-	background: linear-gradient(to bottom, #003d74, 35%, transparent), url('/website/design/layout/image/background/black-pattern.jpg') no-repeat center center fixed;
+	border-bottom: solid .02em $primary;
+	background: linear-gradient(to bottom, $secondary, 35%, transparent), url('/design/layout/image/background/black-pattern.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	
 }
 
 /* Style the title of every page */
 h1 {
 	font-family: title;
-	border-bottom: .03em solid #00539C;
+	border-bottom: .03em solid $primary;
 	padding-bottom: .5em;
-}
-
-button {
-	background-color: transparent;
-	border: none;
-	color: #7f6757;
-}
-
-/* Must have for every image to fit to the parent's container and simultaneously keep the dimensions ratio*/
-img {
-	max-width: 100%;;
-}
-
-.primary {
-	color: #00539C;
-}
-
-.nav-language {
-	display: none;
 }

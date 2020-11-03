@@ -1,0 +1,23 @@
+/* ----------------------------------------------------------------------------------------------  
+Global application variables. Can be used by any scss file with the @import statement
+-------------------------------------------------------------------------------------------------  */
+
+$primary: 							#5e4c41; // brown
+$secondary: 						#00539C; // blue
+$tertiary:							#7f6757; // lighter brown
+
+$navbar-padding-y:                  1rem;
+$navbar-padding-x:                  1rem;
+
+$navbar-dark-color: 				$tertiary;
+$navbar-dark-hover-color: 			$primary;
+
+$navbar-brand-padding-y:			.3125rem;
+
+$nav-link-padding-y: 				0;
+$nav-link-padding-x: 				0;
+
+$navbar-nav-link-padding-x: 		0;
+
+$navbar-toggler-padding-x: 			.25rem;
+$navbar-dark-toggler-border-color:	$secondary;

@@ -67,6 +67,53 @@
 
 	</dependencies>
 
+	<profiles>
+
+		<profile>
+
+			<id>local</id>
+
+			<properties>
+				<loglevel.root>debug</loglevel.root>
+				<loglevel.persistence>trace</loglevel.persistence>
+			</properties>
+
+			<build>
+
+				<plugins>
+
+					<!-- Only needed when compiling sass file into updated css file. For development purposes only, sass compilation needs to be done only once. -->
+					<plugin>
+						<groupId>nl.geodienstencentrum.maven</groupId>
+						<artifactId>sass-maven-plugin</artifactId>
+						<version>3.7.2</version>
+						<executions>
+							<execution>
+								<id>prepare-package</id>
+								<phase>prepare-package</phase>
+								<goals>
+									<goal>update-stylesheets</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<sassSourceDirectory>${basedir}/src/main/webapp/design/style/sheet/sass</sassSourceDirectory>
+							<destination>${project.basedir}/src/main/webapp/design/style/sheet</destination>
+							<sassOptions>
+								<sourcemap>:none</sourcemap>
+								<style>:expanded</style>
+							</sassOptions>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+	</profiles>
+
 	<build>
 
 		<finalName>${project.artifactId}</finalName>

@@ -1,0 +1,7 @@
+<jboss-web>
+
+	<!-- WildFly configuration. -->
+	
+   <context-root>/</context-root>
+   
+</jboss-web>

@@ -1,0 +1,38 @@
+/* ----------------------------------------------------------------------------------------------  
+Customize bootstrap styles specifically for the application
+-------------------------------------------------------------------------------------------------  */
+
+/* ----------------------------------------------- 
+Configure bootstrap variables
+-------------------------------------------------- */
+
+@import "bootstrap-mensa-variables";
+
+@import "bootstrap-4.5.3/bootstrap";
+
+/* ----------------------------------------------- 
+Navigation bar
+-------------------------------------------------- */
+
+/* Align links next to each other */
+.nav-link {
+	display: inline-block;
+}
+
+/* Add some horizontal space between the links */
+@media (min-width: 576px) {
+		
+	.navbar-expand-sm .navbar-nav .nav-link {
+		margin: 0 .5rem;	
+	}
+}
+
+/* For small mobile views make the space arround the links bigger and align text in center */
+.navbar .nav-link {
+    margin: .8rem;
+}
+
+/* Give the toggler the correct height for having a square shape */
+.navbar-toggler {
+	height: 1.875rem;
+}

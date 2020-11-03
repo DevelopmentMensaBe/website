@@ -1,0 +1,374 @@
+/* ----------------------------------------------------------------------------------------------  
+Effects for enhancing UX
+-------------------------------------------------------------------------------------------------  */
+/* ----------------------------------------------------------------------------------------------  
+Global application variables. Can be used by any scss file with the @import statement
+-------------------------------------------------------------------------------------------------  */
+/* ----------------------------------------------- 
+Element load effects
+-------------------------------------------------- */
+/* Add this class to the element to slide in from the bottom with an additional fade in effect */
+.fadeInAndSlideInFromBottom {
+  animation-name: fadeInAndSlideInFromBottom;
+  animation-duration: 1.4s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInAndSlideInFromBottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 70%, 0);
+    -ms-transform: translate3d(0, 70%, 0);
+    transform: translate3d(0, 70%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+/* Add this class to the element to slide in from the top with an additional fade in effect */
+.fadeInAndSlideInFromTop {
+  animation-name: fadeInAndSlideInFromTop;
+  animation-duration: .7s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInAndSlideInFromTop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+/* ----------------------------------------------- 
+Link hover effects
+-------------------------------------------------- */
+/* Add the classes topBottomSlideIn to an anchor */
+a, a:visited, a:hover, a:active {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  transition: .5s color ease;
+  text-decoration: none;
+}
+
+a.topBottomSlideIn:before, a.topBottomSlideIn:after {
+  content: "";
+  transition: .5s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+a.topBottomSlideIn:before {
+  top: -.55rem;
+}
+
+a.topBottomSlideIn:after {
+  bottom: -.30rem;
+}
+
+a.topBottomSlideIn:before, a.topBottomSlideIn:after {
+  height: .125em;
+  height: .10rem;
+  width: 0;
+  background: #00539C;
+}
+
+a.topBottomSlideIn:hover:before, a.topBottomSlideIn:hover:after {
+  width: 100%;
+}
+
+a.topBottomSlideIn:before {
+  left: 0;
+}
+
+a.topBottomSlideIn:after {
+  right: 0;
+}
+
+/* Add the classes spanBorderSlideIn to a span that surrounds a button. Give the button a buttonBorderSlideIn.*/
+button, button:visited, button:active {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  transition: .5s color ease;
+  text-decoration: underline;
+  color: #7f6757;
+  background-color: transparent;
+}
+
+button:hover {
+  color: #5e4c41;
+}
+
+button.buttonBorderSlideIn {
+  border: none;
+}
+
+button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
+  content: "";
+  transition: .5s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+button.buttonBorderSlideIn:before {
+  top: -.55rem;
+}
+
+button.buttonBorderSlideIn:after {
+  bottom: -.35rem;
+}
+
+button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
+  height: .125rem;
+  width: 0;
+  background: #00539C;
+}
+
+button.buttonBorderSlideIn:hover:before, button.buttonBorderSlideIn:hover:after {
+  width: 100%;
+}
+
+button.buttonBorderSlideIn:before {
+  left: 0;
+}
+
+button.buttonBorderSlideIn:after {
+  right: 0;
+}
+
+.spanBorderSlideIn {
+  box-sizing: border-box;
+  margin-left: -.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.spanBorderSlideIn button {
+  position: static;
+  padding: .2rem .4rem;
+}
+
+.spanBorderSlideIn:before, .spanBorderSlideIn:after {
+  content: "";
+  box-sizing: border-box;
+  transition: .25s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  width: .125rem;
+  height: 0;
+  background: #00539C;
+}
+
+.spanBorderSlideIn:before {
+  left: 0;
+  bottom: -.3rem;
+}
+
+.spanBorderSlideIn:after {
+  right: 0;
+  top: -.5rem;
+}
+
+.spanBorderSlideIn button:before {
+  left: 0;
+  transition: .25s all ease;
+}
+
+.spanBorderSlideIn button:after {
+  right: 0;
+  transition: .25s all ease;
+}
+
+.spanBorderSlideIn:hover:before, .spanBorderSlideIn:hover:after {
+  height: calc(100% + .8rem);
+}
+
+.spanBorderSlideIn:hover a:before, .spanBorderSlideIn:hover a:after {
+  width: 100%;
+}
+
+/* ----------------------------------------------- 
+Navigation menu effects
+-------------------------------------------------- */
+/* Create an animated navbar toggler icon */
+.navbar-toggler-icon-animated {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.navbar-toggler-icon-animated span {
+  background-color: #5e4c41;
+  position: absolute;
+  border-radius: 1rem;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  width: 100%;
+  height: .15rem;
+}
+
+.navbar-toggler-icon-animated span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.navbar-toggler-icon-animated span:nth-child(2) {
+  top: .531rem;
+  left: 0;
+}
+
+.navbar-toggler-icon-animated span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+}
+
+.navbar-toggler-icon-animated:not(.open):hover span:nth-child(1) {
+  transform: scaleX(0.8);
+}
+
+.navbar-toggler-icon-animated:not(.open):hover span:nth-child(2) {
+  transform: scaleX(0.5);
+}
+
+.navbar-toggler-icon-animated:not(.open):hover span:nth-child(3) {
+  transform: scaleX(0.8);
+}
+
+.navbar-toggler-icon-animated.open span:nth-child(1) {
+  transform: rotate(-45deg) scaleX(0.7);
+  top: .5rem;
+  left: -.25rem;
+}
+
+.navbar-toggler-icon-animated.open span:nth-child(2) {
+  transform: scale(0);
+  transition-duration: 50ms;
+}
+
+.navbar-toggler-icon-animated.open span:nth-child(3) {
+  transform: rotate(45deg) scaleX(0.7);
+  top: .5rem;
+  left: .25rem;
+}
+
+/* Add a special sonar hover effect to any kind of round link icon */
+.round-link-icon {
+  -webkit-transition: -webkit-transform ease-in-out .7s, background .2s;
+  -moz-transition: -moz-transform ease-in-out .7s, background .2s;
+  transition: transform ease-in-out .7s, background .2s;
+  width: 1.563rem;
+}
+
+.round-link-icon:after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: '';
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.round-link-icon:before {
+  speak: none;
+  font-size: 3rem;
+  line-height: 5.625rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+}
+
+.round-link-icon:after {
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: -1;
+  box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-transition: -webkit-transform ease-in-out .7s, background .2s;
+  -moz-transition: -moz-transform ease-in-out .7s, background .2s;
+  transition: transform ease-in-out .7s, background .2s;
+}
+
+.round-link-icon:hover {
+  -webkit-transform: scale(0.93);
+  -moz-transform: scale(0.93);
+  -ms-transform: scale(0.93);
+  transform: scale(0.93);
+  -webkit-transition: -webkit-transform ease-in-out .7s, background .2s;
+  -moz-transition: -moz-transform ease-in-out .7s, background .2s;
+  transition: transform ease-in-out .7s, background .2s;
+}
+
+.round-link-icon:hover:after {
+  -webkit-animation: sonarEffect 1s ease-out 75ms;
+  -moz-animation: sonarEffect 1s ease-out 75ms;
+  animation: sonarEffect 1s ease-out 75ms;
+}
+
+@-webkit-keyframes sonarEffect {
+  0% {
+    opacity: .3;
+  }
+  40% {
+    opacity: .5;
+    box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.1), 0 0 0.313rem 0.313rem #00539C, 0 0 0 0.313rem rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.1), 0 0 0.313rem 0.313rem #00539C, 0 0 0 0.313rem rgba(255, 255, 255, 0.5);
+    -webkit-transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@-moz-keyframes sonarEffect {
+  0% {
+    opacity: .3;
+  }
+  40% {
+    opacity: .5;
+    box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.1), 0 0 0.313rem 0.313rem #00539C, 0 0 0 0.313rem rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.1), 0 0 0.313rem 0.313rem #00539C, 0 0 0 0.313rem rgba(255, 255, 255, 0.5);
+    -moz-transform: scale(1.5);
+    opacity: 0;
+  }
+}
+@keyframes sonarEffect {
+  0% {
+    opacity: .3;
+  }
+  40% {
+    opacity: .5;
+    box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.1), 0 0 0.313rem 0.313rem #00539C, 0 0 0 0.313rem rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 0.125rem rgba(255, 255, 255, 0.1), 0 0 0.313rem 0.313rem #00539C, 0 0 0 0.313rem rgba(255, 255, 255, 0.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

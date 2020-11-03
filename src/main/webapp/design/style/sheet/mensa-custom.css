@@ -1,0 +1,49 @@
+/* ----------------------------------------------------------------------------------------------  
+Common styling - Applicable to all pages
+-------------------------------------------------------------------------------------------------  */
+/* ----------------------------------------------------------------------------------------------  
+Global application variables. Can be used by any scss file with the @import statement
+-------------------------------------------------------------------------------------------------  */
+/* ----------------------------------------------- 
+Mensa fonts
+-------------------------------------------------- */
+/* Use this for global font styling */
+@font-face {
+  font-family: mensa;
+  src: url(/design/style/font/AvenirLTStd-Roman.otf);
+}
+/* Use this for page titles only */
+@font-face {
+  font-family: title;
+  src: url(/design/style/font/Adequate-ExtraLight.ttf);
+}
+/* ----------------------------------------------- 
+Html elements
+-------------------------------------------------- */
+/* Set global styles for document body */
+body {
+  color: #5e4c41;
+  font-family: mensa;
+  background: url("/design/layout/image/background/black-pattern.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Style the navigation bar */
+nav {
+  border-bottom: solid 0.02em #5e4c41;
+  background: linear-gradient(to bottom, #00539C, 35%, transparent), url("/design/layout/image/background/black-pattern.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Style the title of every page */
+h1 {
+  font-family: title;
+  border-bottom: 0.03em solid #5e4c41;
+  padding-bottom: .5em;
+}

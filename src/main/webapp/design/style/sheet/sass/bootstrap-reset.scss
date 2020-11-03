@@ -1,0 +1,24 @@
+/* ----------------------------------------------------------------------------------------------  
+Override bootstrap styles here to reset to better original values. Here only existing styles will
+be overriden. For new styles use the bootstrap-app-customization.scss
+-------------------------------------------------------------------------------------------------  */
+
+/* Reset _reboot.scss styles */
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: revert;
+    margin-bottom: revert;
+}
+
+p {
+    margin-top: revert;
+    margin-bottom: revert;
+}
+
+/* Reset _type.scss styles */
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: revert;
+    font-weight: revert;
+    line-height: revert;
+}
