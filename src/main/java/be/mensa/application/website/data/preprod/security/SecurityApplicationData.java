@@ -35,7 +35,7 @@ public class SecurityApplicationData {
 
 		person.setFirstName("First name");
 		person.setLastName("Last name");
-		person.setGender(Gender.Female);
+		person.setGender(Gender.Other);
 
 		userOperator.add(
 				new ApplicationUser(person, "mbe", "7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.member));
