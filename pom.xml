@@ -19,7 +19,7 @@
 		<loglevel.persistence>trace</loglevel.persistence>
 		<datasource>datasource-local</datasource>
 		<auth-method>FORM</auth-method>
-		<schema-generation>none</schema-generation>
+		<schema-generation>drop-and-create</schema-generation>
 
 		<maven.compiler.target>14</maven.compiler.target>
 		<maven.compiler.source>14</maven.compiler.source>
@@ -50,6 +50,23 @@
 			<version>1.18.16</version>
 		</dependency>
 
+		<!-- Contains basic data functionality with reference management, together with data related dependencies. -->
+		<dependency>
+			<groupId>org.bitbucket.intenscom</groupId>
+			<artifactId>database</artifactId>
+			<version>1.0.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.datanucleus</groupId>
+					<artifactId>datanucleus-jpa-query</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.bitbucket.intenscom</groupId>
+					<artifactId>data</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<!-- JPA metamodel generation -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -76,6 +93,7 @@
 			<properties>
 				<loglevel.root>debug</loglevel.root>
 				<loglevel.persistence>trace</loglevel.persistence>
+<!-- 				<schema-generation>none</schema-generation> -->
 			</properties>
 
 			<build>
@@ -136,7 +154,7 @@
 
 		<plugins>
 
-			<!-- Add JPA metamodel classes as source classes -->
+			<!-- Add JPA meta model classes as source classes -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -159,9 +177,13 @@
 				</executions>
 			</plugin>
 
+			<!-- Needed newest version since the older one can create unnecessary warnings. -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.3.1</version>
+				<configuration>
+					<warSourceExcludes>design/style/sheet/sass</warSourceExcludes>
+				</configuration>
 			</plugin>
 
 		</plugins>

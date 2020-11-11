@@ -55,9 +55,19 @@
 
 	<!-- Application roles. Mandatory -->
 	<security-role>
-
+		<role-name>admin</role-name>
+	</security-role>
+	<security-role>
+		<role-name>board</role-name>
+	</security-role>
+	<security-role>
 		<role-name>member</role-name>
-
+	</security-role>
+	<security-role>
+		<role-name>translator</role-name>
+	</security-role>
+	<security-role>
+		<role-name>visitor</role-name>
 	</security-role>
 
 </web-app>
