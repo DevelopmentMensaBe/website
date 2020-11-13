@@ -17,7 +17,7 @@ module.exports = {
 
         if (process.env.NODE_ENV === 'production') {
             // configure public dir for ignoring files in src/main/webapp that don't need vue processing (serving)
-            // this is needed for npm build
+            // this is needed for npm run build
             config
                 .plugin('copy')
                 .use(require('copy-webpack-plugin'), [[{
@@ -30,7 +30,7 @@ module.exports = {
             config
                 .plugin('copy')
                 .use(require('copy-webpack-plugin'), [[{
-                    from: path.resolve(__dirname, vueWorkDir)
+                    from: path.resolve(__dirname, publicDir)
                 }]])
         }
         config
@@ -39,7 +39,9 @@ module.exports = {
                 // Read the index.xhtml from the vue work dir
                 args[0].template = vueWorkDir + '/index.xhtml'
                 // Copy it to the output dir
-                args[0].filename = 'index.xhtml'
+                if (process.env.NODE_ENV === 'production') {
+                    args[0].filename = 'index.xhtml'
+                }
                 return args
             }),
 
