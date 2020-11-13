@@ -14,7 +14,7 @@ module.exports = {
 		proxy: 'https://localhost:8100'
 	},
 	// Needed for npm run build, otherwise the generated files will end up in the default 'dist' directory
-	outputDir: publicDirPath + '/tmp',
+	outputDir: publicDirPath,
 
 	chainWebpack: config => {
 
@@ -36,11 +36,11 @@ module.exports = {
 		config
 			.plugin('html')
 			.tap(args => {
-				// Read the index.xhtml from the Vue working directory
 				args[0].template = vueWorkDirPath + '/index.xhtml'
+
 				// Copy it to the output dir
 				if (process.env.NODE_ENV === 'production') {
-					//args[0].filename = 'index.xhtml'
+					args[0].filename = 'index.xhtml'
 				}
 				return args
 			})
@@ -58,8 +58,8 @@ module.exports = {
 
 		// Needed for putting script files in our custom assets directory
 		config.output
-			.filename(assetsDirName + '/script/[name].[hash:8].js')
-			.chunkFilename(assetsDirName + '/script/[id].[hash:8].js')
+			.filename(assetsDirName + '/script/vue/[name].[hash:8].js')
+			.chunkFilename(assetsDirName + '/script/vue/[id].[hash:8].js')
 
 		// Needed for putting image files in our custom assets directory
 		config.module
@@ -69,7 +69,7 @@ module.exports = {
 			.loader('url-loader')
 			.options({
 				limit: inlineLimit,
-				name: assetsDirName + '/layout/image/[name].[hash:8].[ext]'
+				name: assetsDirName + '/layout/image/vue/[name].[hash:8].[ext]'
 			})
 
 		// Needed for putting svg files in our custom assets directory
@@ -77,7 +77,7 @@ module.exports = {
 			.rule('svg')
 			.use('file-loader')
 			.options({
-				name: assetsDirName + '/layout/image/[name].[hash:8].[ext]'
+				name: assetsDirName + '/layout/image/vue/[name].[hash:8].[ext]'
 			})
 
 		// Needed for putting font files in our custom assets directory
@@ -88,15 +88,15 @@ module.exports = {
 			.loader('url-loader')
 			.options({
 				limit: inlineLimit,
-				name: assetsDirName + '/style/font/[name].[hash:8].[ext]'
+				name: assetsDirName + '/style/font/vue/[name].[hash:8].[ext]'
 			})
 	},
 
 	// Needed for putting style sheet files in our custom assets directory
 	css: {
 		extract: {
-			filename: assetsDirName + '/style/sheet/[name].[hash:8].css',
-			chunkFilename: assetsDirName + '/style/sheet/[name].[hash:8].css'
+			filename: assetsDirName + '/style/sheet/vue/[name].[hash:8].css',
+			chunkFilename: assetsDirName + '/style/sheet/vue/[name].[hash:8].css'
 		},
 	},
 }

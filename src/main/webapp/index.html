@@ -14,12 +14,12 @@
 	<link rel="stylesheet" href="/design/style/sheet/mensa-custom.css">
 	<link rel="icon" href="/design/layout/image/icon/fav/favicon.ico">
 	<title>Welkom bij Mensa België!</title>
-	<link href="./design/script/app.4508cce9.js" rel="preload" as="script">
-	<link href="./design/script/chunk-vendors.4508cce9.js" rel="preload" as="script">
-	<link href="./design/style/sheet/app.4508cce9.css" rel="preload" as="style">
-	<link href="./design/style/sheet/chunk-vendors.4508cce9.css" rel="preload" as="style">
-	<link href="./design/style/sheet/chunk-vendors.4508cce9.css" rel="stylesheet">
-	<link href="./design/style/sheet/app.4508cce9.css" rel="stylesheet">
+	<link href="/design/script/app.4508cce9.js" rel="preload" as="script">
+	<link href="/design/script/chunk-vendors.4508cce9.js" rel="preload" as="script">
+	<link href="/design/style/sheet/app.4508cce9.css" rel="preload" as="style">
+	<link href="/design/style/sheet/chunk-vendors.4508cce9.css" rel="preload" as="style">
+	<link href="/design/style/sheet/chunk-vendors.4508cce9.css" rel="stylesheet">
+	<link href="/design/style/sheet/app.4508cce9.css" rel="stylesheet">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 						hidden class="nav-link topBottomSlideIn">Aanmelden</a>
 					<h:form rendered="#{userSession.loggedIn}" styleclass="d-inline-block">
 						<h:commandlink value="Afmelden" actionlistener="#{userSession.logOut}"
-							styleclass="nav-link topBottomSlideIn" />
+							styleclass="nav-link topBottomSlideIn">
 					</h:form>
 				</li>
 			</ul>
@@ -61,8 +61,8 @@
 		<p>#{userLogic.welcomeMessage}</p>
 		<div id="app"></div>
 	</section>
-	<script src="./design/script/chunk-vendors.4508cce9.js"></script>
-	<script src="./design/script/app.4508cce9.js"></script>
+	<script src="/design/script/chunk-vendors.4508cce9.js"></script>
+	<script src="/design/script/app.4508cce9.js"></script>
 </body>
 
 </html>
