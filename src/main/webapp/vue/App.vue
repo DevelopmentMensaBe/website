@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="app-container">
-      <img alt="Vue logo" src="./assets/primevue-logo.png">
+      <img alt="Vue logo" src="@/assets/primevue-logo.png">
       <HelloWorld msg="Welcome to Your PrimeVue App"/>
       <form @submit.prevent="greet">
         <InputText type="text" v-model="text"/>
