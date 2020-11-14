@@ -23,3 +23,8 @@
 hs_err_pid*
 /target/
 /node_modules/
+/src/main/webapp/META-INF/
+/src/main/webapp/design/layout/image/vue
+/src/main/webapp/design/script/vue
+/src/main/webapp/design/style/sheet/vue
+/src/main/webapp/design/style/font/vue
