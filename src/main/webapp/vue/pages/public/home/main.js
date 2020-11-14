@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './App.vue';
+import App from './Home.vue';
 import VueHead from 'vue-head';
 
 import InputText from 'primevue/inputtext';
