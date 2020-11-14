@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="app-container">
-      <img alt="Vue logo" src="@/assets/primevue-logo.png" />
+      <img alt="Vue logo" src="@/asset/primevue-logo.png" />
       <HelloWorld msg="Welcome to Your PrimeVue App TEST" />
       <form @submit.prevent="greet">
         <InputText type="text" v-model="text" />
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import HelloWorld from "../../../components/HelloWorld.vue";
+import HelloWorld from "../../../component/HelloWorld.vue";
 export default {
   data() {
     return {

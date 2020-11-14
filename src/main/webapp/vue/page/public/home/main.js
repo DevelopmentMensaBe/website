@@ -14,7 +14,7 @@ import 'primeicons/primeicons.css';
 const app = createApp(App);
 
 app.use(ToastService);
-app.use(VueHead)
+app.use(VueHead);
 
 app.component('InputText', InputText);
 app.component('Button', Button);

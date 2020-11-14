@@ -1,9 +1,27 @@
+/*
+Abbreviations:
+--------------
+
+nrs: npm run serve
+nrb: npm run build
+
+ch: checked
+sk: skipped
+
+Notes:
+------
+
+Use './' to refer to the project's root base. 
+If you use '/' at the beginning of a path, it will be the root of your file system!
+
+*/
+
 const path = require('path');
 
-// Used by npm run build to copy files from the Vue working directory to the Java default web directory
-const baseDirPath = '/src/main/webapp';
+// Reconfigure Vue to use this path instead of './'
+const baseDirPath = './src/main/webapp';
 
-// The Vue working directory. All files served by Vue (as for npm run serve and as well as for npm run build) must be placed here
+// The Vue working directory. All files served by Vue (as for nrs and as well as for nrb) must be placed here
 const vueWorkDirPath = baseDirPath + '/vue';
 
 // Custom Vue assets directory name to work together with a Java project
@@ -20,11 +38,11 @@ module.exports = {
 	outputDir: baseDirPath,
 
 	// Custom Vue assets directory name to work together with a Java project
-	assetsDir: 'design',
+	// assetsDir: 'design',
 
 	// Needed because by default Vue points to index.html, and with MPA we need to point to one of our pages, preferably also an index page.
 	// Relative to outputDir
-	indexPath: 'index.xhtml',
+	// indexPath: 'index.xhtml',
 
 	// Disable source maps for debugging in dev, test, acc and prod environments when the environments are completely tested through
 	// productionSourceMap: false,
@@ -66,9 +84,9 @@ module.exports = {
 		// 	.add('./' + vueWorkDirPath + '/main.js')
 		// 	.end()
 
-		// When changing the Vue working dir, the location of the '@' reference should also be explictly set
+		// When changing the Vue working dir, the location of the '@' reference should also be explictly set, the default points to './src'
 		config.resolve.alias
-			.set("@", path.join(__dirname, "./" + vueWorkDirPath))
+			.set("@", path.join(__dirname, vueWorkDirPath))
 
 		// Needed for putting script files in our custom assets directory
 		config.output
@@ -114,18 +132,20 @@ module.exports = {
 		},
 	},
 
+	// Page name and last entry of chunks MUST be the same!
 	pages: {
+		// The page 'index' MUST exist AND you can't use a template for index in order to use nrs with CodeMix!
 		'index': {
-			entry: './' + vueWorkDirPath + '/pages/public/home/main.js',
-			template: vueWorkDirPath + '/index.xhtml',
-			filename: '/index.xhtml',
+			// nrs ch
+			entry: vueWorkDirPath + '/page/public/home/main.js',
+			// nrs sk
+			template: vueWorkDirPath + '/template/default.xhtml',
 			title: 'Home',
 			chunks: ['chunk-vendors', 'chunk-common', 'index']
 		},
 		'test': {
-			entry: './' + vueWorkDirPath + '/pages/public/test/main.js',
-			template: vueWorkDirPath + '/index.xhtml',
-			filename: 'test.xhtml',
+			entry: './' + vueWorkDirPath + '/page/public/test/main.js',
+			template: vueWorkDirPath + '/template/default.xhtml',
 			title: 'Test',
 			chunks: ['chunk-vendors', 'chunk-common', 'test']
 		}
