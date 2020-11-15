@@ -12,8 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-
-import lombok.Getter;
+import javax.ws.rs.core.Response;
 
 /**
  * Represents all security data for a user during a session.
@@ -23,7 +22,6 @@ import lombok.Getter;
  * @since 1.0.0
  *
  */
-@Getter
 @Named
 @SessionScoped
 @Path("session")
@@ -37,11 +35,24 @@ public class UserSession implements Serializable {
 	 * Setting loggedIn flag to true
 	 */
 	@GET
-	@Path("login")
+	@Path("logIn")
 	@PermitAll
-	public void login() {
+	public Response logIn() {
 
 		loggedIn = true;
+
+		return Response.ok().header("Access-Control-Allow-Origin", "*").build();
+	}
+
+	/**
+	 * Setting loggedIn flag to true
+	 */
+	@GET
+	@Path("checkLoggedIn")
+	@PermitAll
+	public Response checkLoggedIn() {
+
+		return Response.ok().entity(loggedIn).header("Access-Control-Allow-Origin", "*").build();
 	}
 
 	/**
@@ -50,8 +61,6 @@ public class UserSession implements Serializable {
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	@GET
-	@Path("logout")
 	@PermitAll
 	public void logOut() throws ServletException, IOException {
 
@@ -62,8 +71,5 @@ public class UserSession implements Serializable {
 		((HttpSession) externalContext.getSession(false)).invalidate();
 
 		((HttpServletRequest) externalContext.getRequest()).logout();
-
-		FacesContext.getCurrentInstance().getApplication().getNavigationHandler().handleNavigation(FacesContext.getCurrentInstance(), "",
-				"/index.html?faces-redirect=true");
 	}
 }

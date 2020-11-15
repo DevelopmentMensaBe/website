@@ -110,7 +110,7 @@ module.exports = {
 		'index': {
 			entry: vueWorkDirPath + '/page/public/home/main.js',
 			template: vueWorkDirPath + '/template/default.html',
-			title: 'Home',
+			title: 'Welkom',
 			chunks: ['chunk-vendors', 'chunk-common', 'index']
 		},
 		'test': {
@@ -118,6 +118,20 @@ module.exports = {
 			template: vueWorkDirPath + '/template/default.html',
 			title: 'Test',
 			chunks: ['chunk-vendors', 'chunk-common', 'test']
+		},
+		'member': {
+			entry: vueWorkDirPath + '/page/member/home/main.js',
+			template: vueWorkDirPath + '/template/default.html',
+			filename: 'member/member.html',
+			title: 'Lid',
+			chunks: ['chunk-vendors', 'chunk-common', 'member']
+		},
+		'events': {
+			entry: vueWorkDirPath + '/page/member/events/main.js',
+			template: vueWorkDirPath + '/template/default.html',
+			filename: 'member/events.html',
+			title: 'Activiteiten',
+			chunks: ['chunk-vendors', 'chunk-common', 'events']
 		}
 	}
 }

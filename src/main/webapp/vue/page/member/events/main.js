@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './Home.vue';
+import App from './Events.vue';
 
 const app = createApp(App);
 
