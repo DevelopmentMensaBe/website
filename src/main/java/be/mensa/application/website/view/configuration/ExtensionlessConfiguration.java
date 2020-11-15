@@ -38,8 +38,8 @@ public class ExtensionlessConfiguration extends HttpConfigurationProvider {
 	 */
 	@Override
 	public Configuration getConfiguration(final ServletContext context) {
-		return ConfigurationBuilder.begin().addRule(Join.path("/{param}").to("/{param}.xhtml")).where("param").matches("[A-Za-z]+")
-				.addRule(Join.path("/member/").to("/member/member.xhtml")).addRule(Join.path("/member/{param}").to("/member/{param}.xhtml"))
-				.addRule(Join.path("/").to("/index.xhtml"));
+		return ConfigurationBuilder.begin().addRule(Join.path("/{param}").to("/{param}.html")).where("param").matches("[A-Za-z]+")
+				.addRule(Join.path("/member/").to("/member/member.html")).addRule(Join.path("/member/{param}").to("/member/{param}.html"))
+				.addRule(Join.path("/").to("/index.html"));
 	}
 }

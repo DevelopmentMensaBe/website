@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:h="http://java.sun.com/jsf/html">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" />
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" />
-<script src="/design/script/mensa.js" />
-<link rel="stylesheet" href="/design/style/sheet/html-finetuning.css" />
-<link rel="stylesheet" href="/design/style/sheet/css-effects.css" />
-<link rel="stylesheet" href="/design/style/sheet/bootstrap-mensa.css" />
-<link rel="stylesheet" href="/design/style/sheet/bootstrap-reset.css" />
-<link rel="stylesheet" href="/design/style/sheet/mensa-custom.css" />
-<title>Mensa leden</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/design/script/mensa.js"></script>
+	<link rel="stylesheet" href="/design/style/sheet/html-finetuning.css">
+	<link rel="stylesheet" href="/design/style/sheet/css-effects.css">
+	<link rel="stylesheet" href="/design/style/sheet/bootstrap-mensa.css">
+	<link rel="stylesheet" href="/design/style/sheet/bootstrap-reset.css">
+	<link rel="stylesheet" href="/design/style/sheet/mensa-custom.css">
+	<title>Mensa leden</title>
 </head>
+
 <body>
 
 	#{userSession.login()}
@@ -24,11 +26,11 @@
 		</a>
 
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" id="test">
-		
+
 			<div class="navbar-toggler-icon-animated">
 				<span /><span /><span />
 			</div>
-			
+
 		</button>
 
 		<div class="navbar-collapse collapse" id="collapsibleNavbar">
@@ -76,16 +78,18 @@
 					<a href="member" class="nav-link round-link-icon">
 						<img src="/design/layout/image/icon/login.png" width="25" height="25" />
 					</a>
-					<a href="member" hidden="#{userSession.loggedIn ? 'hidden' : ''}" class="nav-link topBottomSlideIn">Aanmelden</a>
+					<a href="member" hidden="#{userSession.loggedIn ? 'hidden' : ''}"
+						class="nav-link topBottomSlideIn">Aanmelden</a>
 					<!-- Must be a JSF form element -->
 					<h:form rendered="#{userSession.loggedIn}" styleClass="d-inline-block">
 
 						<!-- Must be a JSF commandLink element -->
-						<h:commandLink value="Afmelden" actionListener="#{userSession.logOut}" styleClass="nav-link topBottomSlideIn" />
+						<h:commandLink value="Afmelden" actionListener="#{userSession.logOut}"
+							styleClass="nav-link topBottomSlideIn" />
 
 					</h:form>
 				</li>
-				
+
 			</ul>
 
 		</div>
@@ -100,9 +104,10 @@
 
 	<section class="w-50 mx-auto text-center fadeInAndSlideInFromBottom">
 
-		<img src="/design/layout/image/coming-soon.png"/>
+		<img src="/design/layout/image/coming-soon.png" />
 
 	</section>
 
 </body>
+
 </html>
