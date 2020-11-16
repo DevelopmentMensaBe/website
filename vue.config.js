@@ -33,7 +33,6 @@ const inlineLimit = 40000;
 
 module.exports = {
 
-
 	devServer: {
 		// Needed for npm run serve in order for webpack to start building locally from the correct location
 		contentBase: path.join(__dirname, baseDirPath)
@@ -47,7 +46,7 @@ module.exports = {
 	assetsDir: 'design',
 
 	// Disable source maps for debugging in dev, test, acc and prod environments when the environments are completely tested through
-	// productionSourceMap: false,
+	productionSourceMap: false,
 
 	chainWebpack: config => {
 
@@ -62,8 +61,8 @@ module.exports = {
 
 		// Needed for putting script files in our custom assets directory
 		config.output
-			.filename(assetsDirName + '/script/vue/[name].[hash:8].js')
-			.chunkFilename(assetsDirName + '/script/vue/[id].[hash:8].js')
+			.filename(assetsDirName + '/script/vue/[name].js')
+			.chunkFilename(assetsDirName + '/script/vue/[id].js')
 
 		// Needed for putting image files in our custom assets directory
 		config.module
@@ -73,7 +72,7 @@ module.exports = {
 			.loader('url-loader')
 			.options({
 				limit: inlineLimit,
-				name: assetsDirName + '/layout/image/vue/[name].[hash:8].[ext]'
+				name: assetsDirName + '/layout/image/vue/[name].[ext]'
 			})
 
 		// Needed for putting svg files in our custom assets directory
@@ -81,7 +80,7 @@ module.exports = {
 			.rule('svg')
 			.use('file-loader')
 			.options({
-				name: assetsDirName + '/layout/image/vue/[name].[hash:8].[ext]'
+				name: assetsDirName + '/layout/image/vue/[name].[ext]'
 			})
 
 		// Needed for putting font files in our custom assets directory
@@ -92,15 +91,15 @@ module.exports = {
 			.loader('url-loader')
 			.options({
 				limit: inlineLimit,
-				name: assetsDirName + '/style/font/vue/[name].[hash:8].[ext]'
+				name: assetsDirName + '/style/font/vue/[name].[ext]'
 			})
 	},
 
-	// Needed for putting style sheet files in our custom assets directory
+	// Needed for putting style sheet files in our custom assets directory. Use .[hash:8].css in for cache refresh
 	css: {
 		extract: {
-			filename: assetsDirName + '/style/sheet/vue/[name].[hash:8].css',
-			chunkFilename: assetsDirName + '/style/sheet/vue/[name].[hash:8].css'
+			filename: assetsDirName + '/style/sheet/vue/[name].css',
+			chunkFilename: assetsDirName + '/style/sheet/vue/[name].css'
 		},
 	},
 

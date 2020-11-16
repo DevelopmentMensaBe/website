@@ -23,9 +23,7 @@ export default {
     };
   },
   created() {
-    axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`, {
-      crossDomain: true
-    });
+    axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`);
   },
   components: {
     navigation: Navigation
