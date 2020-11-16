@@ -23,6 +23,9 @@ export default {
       message: "Welkom bezoeker op deze nieuwe versie met Vue"
     };
   },
+  created: function() {
+    document.title = "Welkom bij Mensa";
+  },
   components: {
     navigation: Navigation
   }

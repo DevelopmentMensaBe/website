@@ -21,6 +21,9 @@ export default {
       message: "Welkom bezoeker op deze nieuwe versie met Vue"
     };
   },
+  created: function() {
+    document.title = "Mensa - IQ Testen";
+  },
   components: {
     navigation: Navigation
   }

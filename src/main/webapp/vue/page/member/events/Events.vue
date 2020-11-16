@@ -23,6 +23,7 @@ export default {
     };
   },
   created() {
+    document.title = "Mensa - activiteiten";
     axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`);
   },
   components: {

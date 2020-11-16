@@ -107,30 +107,22 @@ module.exports = {
 	pages: {
 		// The page 'index' MUST exist in order to use nrs with CodeMix!
 		'index': {
-			entry: vueWorkDirPath + '/page/public/home/main.js',
-			template: vueWorkDirPath + '/template/default.html',
-			title: 'Welkom',
-			chunks: ['chunk-vendors', 'chunk-common', 'index']
+			entry: vueWorkDirPath + '/page/public/home/home.js',
+			template: vueWorkDirPath + '/template/default.html'
 		},
 		'test': {
-			entry: vueWorkDirPath + '/page/public/test/main.js',
-			template: vueWorkDirPath + '/template/default.html',
-			title: 'Test',
-			chunks: ['chunk-vendors', 'chunk-common', 'test']
+			entry: vueWorkDirPath + '/page/public/test/test.js',
+			template: vueWorkDirPath + '/template/default.html'
 		},
 		'member': {
-			entry: vueWorkDirPath + '/page/member/home/main.js',
+			entry: vueWorkDirPath + '/page/member/home/member.js',
 			template: vueWorkDirPath + '/template/default.html',
-			filename: 'member/member.html',
-			title: 'Lid',
-			chunks: ['chunk-vendors', 'chunk-common', 'member']
+			filename: 'member/member.html'
 		},
 		'events': {
-			entry: vueWorkDirPath + '/page/member/events/main.js',
+			entry: vueWorkDirPath + '/page/member/events/events.js',
 			template: vueWorkDirPath + '/template/default.html',
-			filename: 'member/events.html',
-			title: 'Activiteiten',
-			chunks: ['chunk-vendors', 'chunk-common', 'events']
+			filename: 'member/events.html'
 		}
 	}
 }

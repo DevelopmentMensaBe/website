@@ -36,7 +36,7 @@ public class Person extends MainTable {
 	@Enumerated(EnumType.STRING)
 	Gender gender;
 
-	String nickname;
+	String nickName;
 	
 	@Embedded
 	Contact contact;

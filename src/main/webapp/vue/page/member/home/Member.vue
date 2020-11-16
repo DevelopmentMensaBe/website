@@ -20,6 +20,7 @@ export default {
     };
   },
   created() {
+    document.title = "Mensa - Ledengedeelte";
     axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`);
     axios
       .get(process.env.VUE_APP_HOST_REST + `users/message`)
