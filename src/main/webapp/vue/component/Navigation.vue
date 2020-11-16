@@ -78,10 +78,12 @@ export default {
   },
   created() {
     axios
-      .get(process.env.VUE_APP_HOST_REST + `session/checkLoggedIn`)
+      .get(process.env.VUE_APP_HOST_REST + `session/checkLoggedIn`, {
+        crossDomain: true
+      })
       .then(response => {
         this.loggedIn = response.data;
-        console.log("nav created: " + response.data);
+        console.log("logged in?: " + response.data);
       });
   }
 };

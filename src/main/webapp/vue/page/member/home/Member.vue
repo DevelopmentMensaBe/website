@@ -20,9 +20,13 @@ export default {
     };
   },
   created() {
-    axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`);
+    axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`, {
+      crossDomain: true
+    });
     axios
-      .get(process.env.VUE_APP_HOST_REST + `users/message`)
+      .get(process.env.VUE_APP_HOST_REST + `users/message`, {
+        crossDomain: true
+      })
       .then(resp => (this.message = resp.data));
   },
   components: {
