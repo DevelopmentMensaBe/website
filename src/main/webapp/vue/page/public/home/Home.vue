@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Navigation from "../../../component/Navigation";
+import Navigation from "@/component/Navigation";
 
 export default {
   data() {

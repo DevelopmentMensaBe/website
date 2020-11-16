@@ -78,7 +78,7 @@ export default {
   },
   created() {
     axios
-      .get(`http://localhost:8080/rest/session/checkLoggedIn`)
+      .get(process.env.VUE_APP_HOST_REST + `session/checkLoggedIn`)
       .then(response => {
         this.loggedIn = response.data;
         console.log("nav created: " + response.data);

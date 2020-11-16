@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Navigation from "../../../component/Navigation";
+import Navigation from "@/component/Navigation";
 import axios from "axios";
 
 export default {
@@ -23,7 +23,7 @@ export default {
     };
   },
   created() {
-    axios.get(`http://localhost:8080/rest/session/logIn`);
+    axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`);
   },
   components: {
     navigation: Navigation

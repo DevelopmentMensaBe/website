@@ -41,10 +41,13 @@ public class UserLogic {
 		return "Welkom bezoeker";
 	}
 
+	@GET
+	@Path("message")
 	@RolesAllowed({ "member", "admin", "board" })
-	public String getMemberMessage() {
+	public Response getMemberMessage() {
 
-		return "Hallo lid van Mensa: " + sessionContext.getCallerPrincipal().getName();
+		return Response.ok().entity("Hallo lid van Mensa: " + sessionContext.getCallerPrincipal().getName()).header("Access-Control-Allow-Origin", "*").build();
+
 	}
 
 	@GET

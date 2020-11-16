@@ -10,17 +10,20 @@
 </template>
 
 <script>
-import Navigation from "../../../component/Navigation";
+import Navigation from "@/component/Navigation";
 import axios from "axios";
 
 export default {
   data() {
     return {
-      message: "Welkom Mensa lid op deze nieuwe versie met Vue"
+      message: null
     };
   },
   created() {
-    axios.get(`http://localhost:8080/rest/session/logIn`);
+    axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`);
+    axios
+      .get(process.env.VUE_APP_HOST_REST + `users/message`)
+      .then(resp => (this.message = resp.data));
   },
   components: {
     navigation: Navigation

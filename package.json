@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"serve": "vue-cli-service serve --port 8100",
+		"localbuild": "vue-cli-service build --mode development --no-clean",
 		"build": "vue-cli-service build --no-clean",
 		"lint": "vue-cli-service lint"
 	},
