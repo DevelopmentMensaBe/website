@@ -10,3 +10,8 @@ img {
 a, button {
   cursor: pointer;
 }
+
+/* Remove annoying border-like outline around certain elements */
+*:focus {
+  outline: none;
+}

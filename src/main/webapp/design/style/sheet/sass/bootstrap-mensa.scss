@@ -16,15 +16,15 @@ Navigation bar
 
 /* Align links next to each other */
 .nav-link {
-	display: inline-block;
+    display: inline-block;
 }
 
 /* Add some horizontal space between the links */
 @media (min-width: 576px) {
-		
-	.navbar-expand-sm .navbar-nav .nav-link {
-		margin: 0 .5rem;	
-	}
+
+    .navbar-expand-sm .navbar-nav .nav-link {
+        margin: 0 .5rem;
+    }
 }
 
 /* For small mobile views make the space arround the links bigger and align text in center */
@@ -34,5 +34,14 @@ Navigation bar
 
 /* Give the toggler the correct height for having a square shape */
 .navbar-toggler {
-	height: 1.875rem;
+    height: 1.875rem;
+}
+
+.dropdown, .dropdown-menu {
+    text-align: center;
+}
+
+.dropdown-menu {
+    top: 200%;
+    left: 5%;
 }

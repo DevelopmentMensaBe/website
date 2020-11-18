@@ -2,7 +2,7 @@
   <div id="content">
     <navigation />
     <section class="container-fluid text-center fadeInAndSlideInFromBottom">
-      <h1>Welkom bij het ledengedeelte</h1>
+      <h1>Welkom bij het gedeelte voor de leden</h1>
       <img alt="Vue logo" src="@/asset/logo.png" />
       <h2>{{message}}</h2>
     </section>
