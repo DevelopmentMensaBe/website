@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d2ef6"],{"5b2e":function(e,n,t){"use strict";t.r(n);var c=t("279c");const s="member/events/Events.vue",i="Activiteiten",o=i;Object(c["a"])(s,i,o,!0)}}]);

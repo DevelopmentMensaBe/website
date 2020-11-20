@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0cf39f"],{"638d":function(e,c,n){"use strict";n.r(c);var o=n("279c");const i="member/member/Profile.vue",r="Profiel",f="Mijn profiel";Object(o["a"])(i,r,f,!0)}}]);

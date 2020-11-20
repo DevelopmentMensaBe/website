@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0aba5a"],{"15bb":function(e,n,o){"use strict";o.r(n);var b=o("279c");const c="member/home/Member.vue",d="Ledengedeelte",t="Welkom bij het gedeelte voor de leden";Object(b["a"])(c,d,t,!0)}}]);
