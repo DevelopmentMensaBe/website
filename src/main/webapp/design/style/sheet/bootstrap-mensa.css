@@ -3425,7 +3425,7 @@ tbody.collapse.show {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
 }
 .navbar > .container,
 .navbar > .container-fluid {
@@ -8272,6 +8272,6 @@ Navigation bar
 }
 
 .dropdown-menu {
-  top: 200%;
-  left: 5%;
+  top: 120%;
+  left: 15%;
 }

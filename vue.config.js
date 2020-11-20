@@ -5,9 +5,6 @@ Abbreviations:
 nrs: npm run serve
 nrb: npm run build
 
-ch: checked
-sk: skipped
-
 Notes:
 ------
 
@@ -49,6 +46,16 @@ module.exports = {
 	productionSourceMap: false,
 
 	chainWebpack: config => {
+
+		// Here we actually change the Vue working directory by configuring the base template file. All files, like main.js, will be looked
+		// up relatively from here
+		// config
+		// 	.plugin('html')
+		// 	.tap(args => {
+		// 		args[0].template = vueWorkDirPath + '/template/default.html'
+
+		// 		return args
+		// 	})
 
 		// Needed to avoud warnings about too big files and performance issues
 		config.performance
@@ -107,20 +114,31 @@ module.exports = {
 	pages: {
 		// The page 'index' MUST exist in order to use nrs with CodeMix!
 		'index': {
-			entry: vueWorkDirPath + '/page/public/home/home.js',
-			template: vueWorkDirPath + '/template/default.html'
+			entry: vueWorkDirPath + '/page/public/home/Home.js',
+			template: vueWorkDirPath + '/template/default.html',
+
+			// Might be needed later for keeping some files with self closed tags for JSF compatibility?
+			// minify: {
+			// 	keepClosingSlash: true,
+			// 	collapseWhitespace: true
+			// }
 		},
 		'test': {
-			entry: vueWorkDirPath + '/page/public/test/test.js',
+			entry: vueWorkDirPath + '/page/public/test/Test.js',
 			template: vueWorkDirPath + '/template/default.html'
 		},
 		'member': {
-			entry: vueWorkDirPath + '/page/member/home/member.js',
+			entry: vueWorkDirPath + '/page/member/home/Member.js',
 			template: vueWorkDirPath + '/template/default.html',
 			filename: 'member/member.html'
 		},
+		'profile': {
+			entry: vueWorkDirPath + '/page/member/profile/Profile.js',
+			template: vueWorkDirPath + '/template/default.html',
+			filename: 'member/profile.html'
+		},
 		'events': {
-			entry: vueWorkDirPath + '/page/member/events/events.js',
+			entry: vueWorkDirPath + '/page/member/events/Events.js',
 			template: vueWorkDirPath + '/template/default.html',
 			filename: 'member/events.html'
 		}

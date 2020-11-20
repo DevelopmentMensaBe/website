@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-sm sticky-top navbar-dark fadeInAndSlideInFromTop">
-    <a class="navbar-brand" href>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <a class="navbar-brand" href="/">
       <img src="/design/layout/image/logo/mensa-logo.png" width="30" height="30" />
     </a>
 

@@ -1,92 +1,119 @@
 <!DOCTYPE html>
+
 <html lang="en" xmlns:h="http://java.sun.com/jsf/html">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" />
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" />
-<script src="/design/script/mensa.js" />
-<link rel="stylesheet" href="/design/style/sheet/html-finetuning.css" />
-<link rel="stylesheet" href="/design/style/sheet/css-effects.css" />
-<link rel="stylesheet" href="/design/style/sheet/bootstrap-mensa.css" />
-<link rel="stylesheet" href="/design/style/sheet/bootstrap-reset.css" />
-<link rel="stylesheet" href="/design/style/sheet/mensa-custom.css" />
-<title>Aanmeldingsfout</title>
-</head>
-<body>
 
-	<nav class="navbar navbar-expand-sm sticky-top navbar-dark fadeInAndSlideInFromTop">
+	<head>
 
-		<a class="navbar-brand" href="">
-			<img src="/design/layout/image/logo/mensa-logo.png" width="30" height="30" />
-		</a>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta http-equiv="Expires" content="3600"/>
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" id="test">
-		
-			<div class="navbar-toggler-icon-animated">
-				<span /><span /><span />
-			</div>
+		<link rel="icon" href="/design/layout/image/icon/fav/favicon.ico"/>
+
+		<title>Default</title>
+
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="/design/script/mensa.js"></script>
+
+		<link rel="stylesheet" href="/design/style/sheet/html-finetuning.css"/>
+		<link rel="stylesheet" href="/design/style/sheet/css-effects.css"/>
+		<link rel="stylesheet" href="/design/style/sheet/bootstrap-mensa.css"/>
+		<link rel="stylesheet" href="/design/style/sheet/bootstrap-reset.css"/>
+		<link rel="stylesheet" href="/design/style/sheet/mensa-custom.css"/>
+
+	</head>
+
+	<body>
+
+		<section id="header"></section>
+
+		<section id="navigation">
+
+			<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+			    <a class="navbar-brand" href="/">
+			      <img src="/design/layout/image/logo/mensa-logo.png" width="30" height="30" />
+			    </a>
 			
-		</button>
+			    <button
+			      class="navbar-toggler"
+			      type="button"
+			      data-toggle="collapse"
+			      data-target="#collapsibleNavbar"
+			      id="test"
+			    >
+			      <div class="navbar-toggler-icon-animated">
+			        <span></span>
+			        <span></span>
+			        <span></span>
+			      </div>
+			    </button>
+			
+			    <div class="navbar-collapse collapse" id="collapsibleNavbar">
+			      <ul class="navbar-nav">
+			        <li class="nav-item mx-auto">
+			          <a class="nav-link topBottomSlideIn" href="/">Welkom</a>
+			        </li>
+			
+			        <li class="nav-item mx-auto">
+			          <a class="nav-link topBottomSlideIn" href="/test">IQ Test</a>
+			        </li>
+			
+			        <li class="nav-item mx-auto">
+			          <a class="nav-link topBottomSlideIn" href="/member/events">Activiteiten</a>
+			        </li>
+			      </ul>
+			
+			      <ul class="navbar-nav ml-auto">
+			        <li class="nav-item mx-auto">
+			          <a href="#" class="nav-link roundLinkIcon">
+			            <img src="/design/layout/image/icon/Dutch.png" width="25" height="25" />
+			          </a>
+			          <a href="#" class="nav-link topBottomSlideIn">Nederlands</a>
+			        </li>
+			
+			        <li class="nav-item mx-auto">
+			          <a href="#" class="nav-link roundLinkIcon">
+			            <img src="/design/layout/image/icon/French.png" width="25" height="25" />
+			          </a>
+			          <a href="#" class="nav-link topBottomSlideIn">Français</a>
+			        </li>
+			
+			        <li class="nav-item mx-auto">
+			          <a href="#" class="nav-link roundLinkIcon">
+			            <img src="/design/layout/image/icon/English.png" width="25" height="25" />
+			          </a>
+			          <a href="#" class="nav-link topBottomSlideIn">English</a>
+			        </li>
+			        
+			      </ul>
+			    </div>
+			  </nav>
+	
+		</section>
 
-		<div class="navbar-collapse collapse" id="collapsibleNavbar">
-
-			<ul class="navbar-nav">
-
-				<li class="nav-item mx-auto">
-					<a class="nav-link topBottomSlideIn" href="/">Welkom</a>
-				</li>
-
-				<li class="nav-item mx-auto">
-					<a class="nav-link topBottomSlideIn" href="/test">IQ Test</a>
-				</li>
-
-				<li class="nav-item mx-auto">
-					<a class="nav-link topBottomSlideIn" href="/member/activities">Activiteiten</a>
-				</li>
-
-			</ul>
-
-			<ul class="navbar-nav ml-auto">
-
-				<li class="nav-item mx-auto">
-					<a href="#" class="nav-link round-link-icon">
-						<img src="/design/layout/image/icon/Dutch.png" width="25" height="25" />
-					</a>
-					<a href="#" class="nav-link topBottomSlideIn">Nederlands</a>
-				</li>
-
-				<li class="nav-item mx-auto">
-					<a href="#" class="nav-link round-link-icon">
-						<img src="/design/layout/image/icon/French.png" width="25" height="25" />
-					</a>
-					<a href="#" class="nav-link topBottomSlideIn">Français</a>
-				</li>
-
-				<li class="nav-item mx-auto">
-					<a href="#" class="nav-link round-link-icon">
-						<img src="/design/layout/image/icon/English.png" width="25" height="25" />
-					</a>
-					<a href="#" class="nav-link topBottomSlideIn">English</a>
-				</li>
-
-			</ul>
-
-		</div>
-
-	</nav>
-
-	<section class="container-fluid text-center fadeInAndSlideInFromBottom">
-
-		<h1>Aanmelden</h1>
-
-		<p>Aanmelden mislukt. Heb je zeker het juiste wachtwoord ingevoerd?</p>
-
-		<span class="spanBorderSlideIn">
-			<button onclick="window.history.back()" class="buttonBorderSlideIn">Opnieuw proberen</button>
-		</span>
+		<section id="title" class="container-fluid text-center fadeInAndSlideInFromBottom">
 		
-	</section>
+			<h1>Aanmelden</h1>
+			
+		</section>
+
+		<section id="content" class="content container-fluid text-center">
+	
+			<p>Aanmelden mislukt. Heb je zeker het juiste wachtwoord ingevoerd?</p>
+	
+			<span class="spanBorderSlideIn">
+				<button onclick="window.history.back()" class="buttonBorderSlideIn">Opnieuw proberen</button>
+			</span>
+	
+		</section>
+		
+		<section id="footer" class="footer text-center">
+		
+			<footer>Copyright Mensa 2020</footer>
+		
+		</section>
 
 </body>
+
 </html>
