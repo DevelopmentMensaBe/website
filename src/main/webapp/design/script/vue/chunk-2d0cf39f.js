@@ -1,1 +1,1 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0cf39f"],{"638d":function(e,c,n){"use strict";n.r(c);var o=n("279c");const i="member/member/Profile.vue",r="Profiel",f="Mijn profiel";Object(o["a"])(i,r,f,!0)}}]);
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0cf39f"],{"638d":function(e,o,c){"use strict";c.r(o);var i=c("279c");const n="member/profile/Profile.vue",r="Profiel",f="Mijn profiel";Object(i["a"])(n,r,f,!0)}}]);

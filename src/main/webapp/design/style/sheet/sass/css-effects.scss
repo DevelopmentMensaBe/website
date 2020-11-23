@@ -100,74 +100,22 @@ a.topBottomSlideIn:after {
 }
 
 /* Add the classes spanBorderSlideIn to a span that surrounds a button. Give the button a buttonBorderSlideIn.*/
-button, button:visited, button:active {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  position: relative;
-  transition: .5s color ease;
-  text-decoration: underline;
-  color: $tertiary;
-  background-color: transparent;
-}
-
-button:hover {
-  color: $primary;
-}
-
-button.buttonBorderSlideIn {
-  border: none;
-}
-
-button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
-  content: "";
-  transition: .5s all ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  position: absolute;
-}
-
-button.buttonBorderSlideIn:before {
-  top: -.55rem;
-}
-
-button.buttonBorderSlideIn:after {
-  bottom: -.35rem;
-}
-
-button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
-  height: .125rem;
-  width: 0;
-  background: $secondary;
-}
-
-button.buttonBorderSlideIn:hover:before, button.buttonBorderSlideIn:hover:after {
-  width: 100%;
-}
-
-button.buttonBorderSlideIn:before {
-  left: 0;
-}
-
-button.buttonBorderSlideIn:after {
-  right: 0;
-}
 
 .spanBorderSlideIn {
   box-sizing: border-box;
-  margin-left: -.4rem;
   position: relative;
   overflow: hidden;
 }
 
-.spanBorderSlideIn button {
+.spanBorderSlideIn button { // background border
+  border: .0625rem solid $secondary;
   position: static;
-  padding: .2rem .4rem;
 }
 
-.spanBorderSlideIn:before, .spanBorderSlideIn:after {
+.spanBorderSlideIn:before, .spanBorderSlideIn:after { // left en right borders
   content: "";
   box-sizing: border-box;
-  transition: .25s all ease;
+  transition: .2s all ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
@@ -176,14 +124,14 @@ button.buttonBorderSlideIn:after {
   background: $secondary;
 }
 
-.spanBorderSlideIn:before {
+.spanBorderSlideIn:before { // left border
   left: 0;
-  bottom: -.3rem;
+  bottom: -.5rem;
 }
 
-.spanBorderSlideIn:after {
-  right: 0;
-  top: -.5rem;
+.spanBorderSlideIn:after { // right border
+  right: 1rem;
+  top: -.7rem;
 }
 
 .spanBorderSlideIn button:before {
@@ -197,11 +145,58 @@ button.buttonBorderSlideIn:after {
 }
 
 .spanBorderSlideIn:hover:before, .spanBorderSlideIn:hover:after {
-  height: calc(100% + .8rem);
+  height: calc(100% + 1.2rem);
 }
 
 .spanBorderSlideIn:hover a:before, .spanBorderSlideIn:hover a:after {
   width: 100%;
+}
+
+button {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  transition: .5s color ease;
+  color: $tertiary;
+  background-color: transparent;
+}
+
+button:hover {
+  color: $primary;
+}
+
+button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after { // top en bottom border
+  content: "";
+  transition: .5s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+button.buttonBorderSlideIn:before {
+  top: -.7rem;
+}
+
+button.buttonBorderSlideIn:after {
+  bottom: -.5rem;
+}
+
+button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
+  height: .125rem;
+  width: 0;
+  background: $secondary;
+}
+
+button.buttonBorderSlideIn:hover:before, button.buttonBorderSlideIn:hover:after {
+  width: calc(100% - 1rem);
+}
+
+button.buttonBorderSlideIn:before {
+  left: 0;
+}
+
+button.buttonBorderSlideIn:after {
+  right: 1rem;
 }
 
 /* ----------------------------------------------- 

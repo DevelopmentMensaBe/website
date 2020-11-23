@@ -3,10 +3,14 @@
  */
 package be.mensa.application.website.data.preprod.security;
 
+import java.time.LocalDate;
+
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 
 import be.mensa.application.website.data.operator.security.UserOperator;
+import be.mensa.application.website.data.schema.dynamic.common.Address;
+import be.mensa.application.website.data.schema.dynamic.common.Contact;
 import be.mensa.application.website.data.schema.dynamic.person.Person;
 import be.mensa.application.website.data.schema.dynamic.security.ApplicationUser;
 import be.mensa.application.website.data.schema.fixed.Gender;
@@ -35,7 +39,24 @@ public class SecurityApplicationData {
 
 		person.setFirstName("First name");
 		person.setLastName("Last name");
-		person.setGender(Gender.Male);
+		person.setGender(Gender.Other);
+		person.setBirthDate(LocalDate.now().minusDays(1));
+
+		var contact = new Contact();
+
+		contact.setEmail("test@donttest.fake");
+		contact.setWebsite("www.mensa.be");
+
+		var address = new Address();
+
+		address.setStreet("Park Avenue");
+		address.setNumber("1");
+		address.setCity("Amsterdam");
+		address.setZipCode("1000");
+
+		contact.setAddress(address);
+
+		person.setContact(contact);
 
 		userOperator.add(
 				new ApplicationUser(person, "mbe", "7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.member));

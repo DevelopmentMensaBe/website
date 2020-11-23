@@ -56,6 +56,13 @@ h1 {
 	padding-bottom: .5em;
 }
 
+/* Style the footer of every page */
+footer {
+	font-family: title;
+	border-top: .03em solid $primary;
+	padding: 1em;
+}
+
 /* Needed for sticky footer */
 html, body {
   height: 100%;

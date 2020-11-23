@@ -83,7 +83,7 @@
             aria-expanded="false"
           >Mijn Profiel</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown navbarDropdownIcon">
-            <a href="#" class="dropdown-item topBottomSlideIn">Aanpassen</a>
+            <a href="/member/profile" class="dropdown-item topBottomSlideIn">Aanpassen</a>
             <div class="dropdown-divider"></div>
             <a href="/logout" class="dropdown-item topBottomSlideIn">Afmelden</a>
           </div>

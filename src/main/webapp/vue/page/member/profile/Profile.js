@@ -1,6 +1,6 @@
 /* -------------------------------------- Adapt below part ----------------------------------- */
 
-const component = 'member/member/Profile.vue'
+const component = 'member/profile/Profile.vue'
 
 // needs translation
 const page = 'Profiel'

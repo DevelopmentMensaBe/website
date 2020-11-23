@@ -1,6 +1,7 @@
 <template>
   <main>
     <img alt="Vue logo" src="@/asset/logo.png" />
+
     <h2>{{message}}</h2>
   </main>
 </template>

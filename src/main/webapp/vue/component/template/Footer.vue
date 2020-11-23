@@ -1,3 +1,3 @@
 <template>
-  <footer>Copyright Mensa 2020</footer>
+  <footer>Copyright Mensa 2020 ©</footer>
 </template>

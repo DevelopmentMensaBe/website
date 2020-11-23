@@ -24,3 +24,7 @@ hs_err_pid*
 /target/
 /node_modules/
 /src/main/webapp/META-INF/
+
+# local env files
+.env.local
+.env.*.local

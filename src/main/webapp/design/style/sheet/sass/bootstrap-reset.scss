@@ -15,10 +15,21 @@ p {
     margin-bottom: revert;
 }
 
+button {
+	font-size: 1.4rem;
+	margin: 1rem 1rem 1rem 0;
+	padding: 0 1rem;
+}
+
 /* Reset _type.scss styles */
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: revert;
     font-weight: revert;
     line-height: revert;
+}
+
+/* Reset bugs */
+.p-md-3 {
+	padding: 0 .5rem !important;	
 }

@@ -1,5 +1,8 @@
 package be.mensa.application.website.data.schema.dynamic.person;
 
+import java.time.LocalDate;
+
+import javax.json.bind.annotation.JsonbDateFormat;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -35,6 +38,9 @@ public class Person extends MainTable {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	Gender gender;
+	
+	@JsonbDateFormat("dd/MM/yyyy")
+	LocalDate birthDate;
 
 	String nickName;
 	

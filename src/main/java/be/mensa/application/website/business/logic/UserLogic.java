@@ -51,6 +51,16 @@ public class UserLogic {
 	}
 
 	@GET
+	@Path("loggedInUser")
+	@Produces(MediaType.APPLICATION_JSON)
+	@PermitAll
+	public Response getLoggedInUser() {
+
+		return Response.ok().entity(userOperator.get().findUser(sessionContext.getCallerPrincipal().getName())).header("Access-Control-Allow-Origin", "*")
+				.build();
+	}
+
+	@GET
 	@Path("all")
 	@Produces(MediaType.APPLICATION_JSON)
 	@PermitAll

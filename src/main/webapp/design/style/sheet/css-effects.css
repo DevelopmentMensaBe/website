@@ -97,74 +97,21 @@ a.topBottomSlideIn:after {
 }
 
 /* Add the classes spanBorderSlideIn to a span that surrounds a button. Give the button a buttonBorderSlideIn.*/
-button, button:visited, button:active {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  position: relative;
-  transition: .5s color ease;
-  text-decoration: underline;
-  color: #7f6757;
-  background-color: transparent;
-}
-
-button:hover {
-  color: #5e4c41;
-}
-
-button.buttonBorderSlideIn {
-  border: none;
-}
-
-button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
-  content: "";
-  transition: .5s all ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  position: absolute;
-}
-
-button.buttonBorderSlideIn:before {
-  top: -.55rem;
-}
-
-button.buttonBorderSlideIn:after {
-  bottom: -.35rem;
-}
-
-button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
-  height: .125rem;
-  width: 0;
-  background: #00539C;
-}
-
-button.buttonBorderSlideIn:hover:before, button.buttonBorderSlideIn:hover:after {
-  width: 100%;
-}
-
-button.buttonBorderSlideIn:before {
-  left: 0;
-}
-
-button.buttonBorderSlideIn:after {
-  right: 0;
-}
-
 .spanBorderSlideIn {
   box-sizing: border-box;
-  margin-left: -.4rem;
   position: relative;
   overflow: hidden;
 }
 
 .spanBorderSlideIn button {
+  border: 0.0625rem solid #00539C;
   position: static;
-  padding: .2rem .4rem;
 }
 
 .spanBorderSlideIn:before, .spanBorderSlideIn:after {
   content: "";
   box-sizing: border-box;
-  transition: .25s all ease;
+  transition: .2s all ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
@@ -175,12 +122,12 @@ button.buttonBorderSlideIn:after {
 
 .spanBorderSlideIn:before {
   left: 0;
-  bottom: -.3rem;
+  bottom: -.5rem;
 }
 
 .spanBorderSlideIn:after {
-  right: 0;
-  top: -.5rem;
+  right: 1rem;
+  top: -.7rem;
 }
 
 .spanBorderSlideIn button:before {
@@ -194,11 +141,58 @@ button.buttonBorderSlideIn:after {
 }
 
 .spanBorderSlideIn:hover:before, .spanBorderSlideIn:hover:after {
-  height: calc(100% + .8rem);
+  height: calc(100% + 1.2rem);
 }
 
 .spanBorderSlideIn:hover a:before, .spanBorderSlideIn:hover a:after {
   width: 100%;
+}
+
+button {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  transition: .5s color ease;
+  color: #7f6757;
+  background-color: transparent;
+}
+
+button:hover {
+  color: #5e4c41;
+}
+
+button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
+  content: "";
+  transition: .5s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+button.buttonBorderSlideIn:before {
+  top: -.7rem;
+}
+
+button.buttonBorderSlideIn:after {
+  bottom: -.5rem;
+}
+
+button.buttonBorderSlideIn:before, button.buttonBorderSlideIn:after {
+  height: .125rem;
+  width: 0;
+  background: #00539C;
+}
+
+button.buttonBorderSlideIn:hover:before, button.buttonBorderSlideIn:hover:after {
+  width: calc(100% - 1rem);
+}
+
+button.buttonBorderSlideIn:before {
+  left: 0;
+}
+
+button.buttonBorderSlideIn:after {
+  right: 1rem;
 }
 
 /* ----------------------------------------------- 
