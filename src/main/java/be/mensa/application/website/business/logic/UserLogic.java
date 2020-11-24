@@ -8,13 +8,16 @@ import javax.ejb.Stateless;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import be.mensa.application.website.data.operator.security.UserOperator;
+import be.mensa.application.website.data.schema.dynamic.security.ApplicationUser;
 
 /**
  * Contains common application information.
@@ -58,6 +61,16 @@ public class UserLogic {
 
 		return Response.ok().entity(userOperator.get().findUser(sessionContext.getCallerPrincipal().getName())).header("Access-Control-Allow-Origin", "*")
 				.build();
+	}
+
+	@POST
+	@Path("save")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	@PermitAll
+	public Response saveUser(ApplicationUser applicationUser) {
+
+		return Response.ok().entity(userOperator.get().save(applicationUser)).header("Access-Control-Allow-Origin", "*").build();
 	}
 
 	@GET

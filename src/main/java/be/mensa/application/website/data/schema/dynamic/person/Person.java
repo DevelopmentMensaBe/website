@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
+import be.mensa.application.website.business.common.ApplicationInformation;
 import be.mensa.application.website.data.schema.dynamic.common.Contact;
 import be.mensa.application.website.data.schema.fixed.Gender;
 import ci.intern.module.database.schema.main.MainTable;
@@ -39,7 +40,7 @@ public class Person extends MainTable {
 	@Enumerated(EnumType.STRING)
 	Gender gender;
 	
-	@JsonbDateFormat("dd/MM/yyyy")
+	@JsonbDateFormat(ApplicationInformation.DATE_FORMAT)
 	LocalDate birthDate;
 
 	String nickName;

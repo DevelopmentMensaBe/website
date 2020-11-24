@@ -32,9 +32,9 @@ module.exports = {
 
 	devServer: {
 		// Needed for npm run serve in order for webpack to start building locally from the correct location
-		contentBase: path.join(__dirname, baseDirPath)
-		// Maybe needed for Java API?
-		//proxy: 'https://localhost:8100'
+		contentBase: path.join(__dirname, baseDirPath),
+		// Maybe needed for Java API? Validate which effect this has
+		proxy: 'http://localhost:8080'
 	},
 	// Needed for npm run build, otherwise the generated files will end up in the default 'dist' directory
 	outputDir: baseDirPath,

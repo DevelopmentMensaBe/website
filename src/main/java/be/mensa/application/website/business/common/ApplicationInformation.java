@@ -44,6 +44,8 @@ public class ApplicationInformation {
 
 	public static final String DEVELOPMENT_GROUP_NAME = "be.mensa.application";
 
+	public static final String DATE_FORMAT = "dd/MM/yyyy";
+
 	/**********************************************************************************************************************************************************
 	 *
 	 * Application constant initialization

@@ -94,7 +94,7 @@
 			<properties>
 				<loglevel.root>debug</loglevel.root>
 				<loglevel.persistence>trace</loglevel.persistence>
-<!-- 				<schema-generation>none</schema-generation> -->
+				<!-- <schema-generation>none</schema-generation> -->
 			</properties>
 
 			<build>

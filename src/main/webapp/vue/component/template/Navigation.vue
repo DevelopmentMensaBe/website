@@ -103,10 +103,12 @@ export default {
     };
   },
   created() {
+    console.log(this.loggedIn);
     axios
       .get(process.env.VUE_APP_HOST_REST + `session/checkLoggedIn`)
       .then(response => {
         this.loggedIn = response.data;
+        console.log(this.loggedIn);
       });
   }
 };
