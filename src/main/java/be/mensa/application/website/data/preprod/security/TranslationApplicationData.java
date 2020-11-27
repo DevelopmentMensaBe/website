@@ -83,7 +83,7 @@ public class TranslationApplicationData {
 		translationOperator.add(new Translation(LABEL_PAGE_PROFILE_FORM + "street", "Street", "Straat", "Rue", "Straße"));
 		translationOperator.add(new Translation(LABEL_PAGE_PROFILE_FORM + "number", "Number", "Nummer", "Numéro", "Nummer"));
 		translationOperator.add(new Translation(LABEL_PAGE_PROFILE_FORM + "zip", "Zip Code", "Postcode", "Code Postal", "Postleitzahl"));
-		translationOperator.add(new Translation(LABEL_PAGE_PROFILE_FORM + "city", "City", "Gemeente", "Stadt", "Ville"));
+		translationOperator.add(new Translation(LABEL_PAGE_PROFILE_FORM + "city", "City", "Gemeente", "Ville", "Stadt"));
 		translationOperator.add(new Translation(LABEL_PAGE_PROFILE_FORM + "mensaId", "Mensa Id", "Mensa Id", "Id Mensa", "Mensa Id"));
 		translationOperator.add(new Translation(LABEL_PAGE_PROFILE_FORM + "role", "Role", "Rol", "Rôle", "Rolle"));
 		translationOperator.add(new Translation(LABEL_PAGE_PROFILE_FORM + "language", "Language", "Taal", "Langue", "Sprache"));
