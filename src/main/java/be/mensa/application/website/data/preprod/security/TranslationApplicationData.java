@@ -28,9 +28,19 @@ public class TranslationApplicationData {
 		// Labels - common
 
 		// Navigation
-		translationOperator.add(new Translation("label.common.profile.login", "Login", "Aanmelden", "Connecter", "Einloggen"));
-		translationOperator.add(new Translation("label.common.profile.logout", "Logout", "Afmelden", "Déconnecter", "Ausloggen"));
-		translationOperator.add(new Translation("label.common.profile.edit", "Edit", "Aanpassen", "Adapter", "Anpassen"));
+		translationOperator.add(new Translation("label.common.navigation.page.home", "Welcome", "Welkom", "Bienvenue", "Wilkommen"));
+		translationOperator.add(new Translation("label.common.navigation.page.test", "IQ Test", "IQ Test", "Test IQ", "IQ Test"));
+		translationOperator.add(new Translation("label.common.navigation.page.events", "Events", "Activiteiten", "Evénements", "Veranstaltungen"));
+		translationOperator.add(new Translation("label.common.navigation.page.profile", "My Profile", "Mijn profiel", "Mon Profil", "Mein Profil"));
+
+		translationOperator.add(new Translation("label.common.navigation.language.english", "English", "Engels", "Anglais", "Englisch"));
+		translationOperator.add(new Translation("label.common.navigation.language.dutch", "Dutch", "Nederlands", "Néerlandais", "Niederländisch"));
+		translationOperator.add(new Translation("label.common.navigation.language.french", "French", "Frans", "Français", "Französisch"));
+		translationOperator.add(new Translation("label.common.navigation.language.german", "German", "Duits", "Allemand", "Deutsch"));
+
+		translationOperator.add(new Translation("label.common.navigation.profile.login", "Login", "Aanmelden", "Connecter", "Einloggen"));
+		translationOperator.add(new Translation("label.common.navigation.profile.logout", "Logout", "Afmelden", "Déconnecter", "Ausloggen"));
+		translationOperator.add(new Translation("label.common.navigation.profile.edit", "Edit", "Aanpassen", "Adapter", "Anpassen"));
 
 		translationOperator.add(new Translation("label.common.save", "Save", "Bewaren", "Sauvegarder", "Bewahren"));
 
