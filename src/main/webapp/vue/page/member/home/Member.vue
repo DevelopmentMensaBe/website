@@ -16,9 +16,7 @@ export default {
 		};
 	},
 	created() {
-		axios
-			.get(process.env.VUE_APP_HOST_REST + "user/message")
-			.then(resp => (this.message = resp.data));
+		axios.get("user/message").then(resp => (this.message = resp.data));
 	}
 };
 </script>

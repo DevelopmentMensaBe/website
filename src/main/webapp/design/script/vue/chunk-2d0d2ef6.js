@@ -1,1 +1,1 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d2ef6"],{"5b2e":function(e,n,t){"use strict";t.r(n);var c=t("279c");const s="member/events/Events.vue",o="content.events.documentTitle",i="content.events.title";Object(c["a"])(s,o,i,!0)}}]);
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d2ef6"],{"5b2e":function(e,n,s){"use strict";s.r(n);var c=s("279c");Object(c["a"])("member/events/Events.vue","events",!0)}}]);

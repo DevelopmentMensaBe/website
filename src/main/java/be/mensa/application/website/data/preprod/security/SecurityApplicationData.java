@@ -69,7 +69,7 @@ public class SecurityApplicationData {
 		person.setGender(Gender.Male);
 
 		userOperator.add(new ApplicationUser(person, "fusai", "MBE4248",
-				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.admin, Language.nederlands));
+				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.admin, Language.dutch));
 
 		person = new Person();
 
@@ -78,7 +78,7 @@ public class SecurityApplicationData {
 		person.setGender(Gender.Male);
 
 		userOperator.add(new ApplicationUser(person, "tdepryck", "MBE0001",
-				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.board, Language.francais));
+				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.board, Language.french));
 
 		person = new Person();
 
@@ -87,6 +87,6 @@ public class SecurityApplicationData {
 		person.setGender(Gender.Female);
 
 		userOperator.add(new ApplicationUser(person, "nmorena", "MBE4444",
-				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.visitor, Language.deutsch));
+				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.visitor, Language.german));
 	}
 }

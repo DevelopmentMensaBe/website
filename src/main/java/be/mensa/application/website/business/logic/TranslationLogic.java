@@ -13,6 +13,7 @@ import javax.ws.rs.core.Response;
 
 import be.mensa.application.website.data.operator.common.TranslationOperator;
 import be.mensa.application.website.data.schema.fixed.Language;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Contains logic for translating any kind of text.
@@ -22,6 +23,7 @@ import be.mensa.application.website.data.schema.fixed.Language;
  * @since 1.0.0
  *
  */
+@Slf4j
 @Startup
 @Singleton
 @Path("translation")
@@ -47,6 +49,8 @@ public class TranslationLogic {
 	 */
 	public String translate(String name, Language language) {
 
+		log.info(name);
+
 		var translation = translationOperator.get().translate(name);
 
 		var translatedText = "";
@@ -57,15 +61,15 @@ public class TranslationLogic {
 			translatedText = translation.getEnglish();
 			break;
 
-		case nederlands:
+		case dutch:
 			translatedText = translation.getNederlands();
 			break;
 
-		case francais:
+		case french:
 			translatedText = translation.getFrancais();
 			break;
 
-		case deutsch:
+		case german:
 			translatedText = translation.getDeutsch();
 			break;
 		}

@@ -1,11 +1,7 @@
-/* -------------------------------------- Adapt below part ----------------------------------- */
-
-const component = 'member/events/Events.vue'
-const browserTabLabel = 'content.events.documentTitle'
-const titleLabel = 'content.events.title'
-
-/* -------------------------------------- Adapt above part ----------------------------------- */
+/* ---------------------------------------------------------------- 	Page entrypoint 	---------------------------------------------------------------- */
 
 import load from '@/template/default.js'
 
-load(component, browserTabLabel, titleLabel, true)
+load('member/events/Events.vue', 'events', true)
+
+/* ---------------------------------------------------------------- 	Page entrypoint 	---------------------------------------------------------------- */

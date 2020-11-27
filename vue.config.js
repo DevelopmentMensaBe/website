@@ -33,8 +33,12 @@ module.exports = {
 	devServer: {
 		// Needed for npm run serve in order for webpack to start building locally from the correct location
 		contentBase: path.join(__dirname, baseDirPath),
-		// Maybe needed for Java API? Validate which effect this has
-		// proxy: 'http://localhost:8080'
+		// Needed for local testing, otherwise we get CORS errors in the browser
+		proxy: {
+			'/rest': {
+				target: 'http://localhost:8080/'
+			},
+		},
 	},
 	// Needed for npm run build, otherwise the generated files will end up in the default 'dist' directory
 	outputDir: baseDirPath,
@@ -56,6 +60,7 @@ module.exports = {
 
 		// 		return args
 		// 	})
+
 
 		// Needed to avoud warnings about too big files and performance issues
 		config.performance

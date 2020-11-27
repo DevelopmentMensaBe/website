@@ -3,9 +3,15 @@ import { createApp, defineAsyncComponent } from 'vue'
 
 // Axios Core: front-end to back-end communication							-------------------------------------------------------------------------------- */
 import axios from "axios";
+axios.defaults.baseURL = "/rest"; // Url of API. Must be with initial slash, otherwise relative url's are use!
+axios.defaults.headers.post['Content-Type'] = 'application/json'; // Not set by default apparently
 
 // PrimeVue Core: enhanced components with theming and icons				-------------------------------------------------------------------------------- */
 import 'primevue/resources/primevue.min.css';
+
+// PrimeVue Components
+import toast from 'primevue/toast';
+import toastService from 'primevue/toastservice';
 
 // PrimeVue Theme															-------------------------------------------------------------------------------- */
 import 'primevue/resources/themes/luna-blue/theme.css';
@@ -15,6 +21,7 @@ import 'primeicons/primeicons.css';
 
 // PrimeVue Utilities: alternative for bootstrap							-------------------------------------------------------------------------------- */
 import 'primeflex/primeflex.css';
+
 
 // Application Core: layout components										-------------------------------------------------------------------------------- */
 import Header from '@/component/template/Header.vue'
@@ -27,14 +34,18 @@ const TitleOptions = {
 	DEFAULT: "Mensa.be",
 	PAGE: "Mensa - "
 };
+const TemplateLabels = {
+	DOCUMENT_TITLE: 'label.document.title.',
+	TITLE_CONTENT: 'content.title.'
+};
 
 // Application Logic: translation
 import { translate } from "@/component/common/LanguageLogic.js";
 
 // Component Logic: build layout											-------------------------------------------------------------------------------- */
-export default async function load(content, browserTab, title, member) {
+export default async function load(content, title, member) {
 
-	var documentTitle = await translate(browserTab).then(t => { return t.data })
+	var documentTitle = await translate(TemplateLabels.DOCUMENT_TITLE + title).then(t => { return t.data })
 
 	// await translate(browserTab).then(t => { documentTitle = t.data })
 
@@ -45,7 +56,7 @@ export default async function load(content, browserTab, title, member) {
 	// check if we are in a member page to set the logged in flag
 	if (member) {
 
-		axios.get(process.env.VUE_APP_HOST_REST + `session/logIn`);
+		axios.get('session/logIn');
 	}
 
 	// start building the page, with the header, navigation, title, content, footer
@@ -53,10 +64,15 @@ export default async function load(content, browserTab, title, member) {
 	createApp(Navigation).mount('#navigation')
 
 	const titleApp = createApp(Title);
-	titleApp.config.globalProperties.title = await translate(title).then(t => { return t.data });
+	titleApp.config.globalProperties.title = await translate(TemplateLabels.TITLE_CONTENT + title).then(t => { return t.data });
 	titleApp.mount('#title')
 
-	createApp(defineAsyncComponent(() => import('@/page/' + content))).mount('#content')
+	const contentApp = createApp(defineAsyncComponent(() => import('@/page/' + content)))
+
+	contentApp.use(toastService);
+	contentApp.component('Toast', toast);
+
+	contentApp.mount('#content')
 
 	createApp(Footer).mount('#footer')
 }

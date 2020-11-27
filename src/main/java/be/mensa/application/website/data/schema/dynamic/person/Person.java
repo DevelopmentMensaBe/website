@@ -20,11 +20,11 @@ import lombok.experimental.Tolerate;
 
 /**
  * Represents the Person table in the database.
- * 
+ *
  * @author Fabrizio Usai
- * 
+ *
  * @since 1.0.0
- * 
+ *
  */
 @Entity
 @Data
@@ -34,19 +34,19 @@ public class Person extends MainTable {
 	@NonNull
 	@Column(nullable = false)
 	String firstName, lastName;
-	
+
 	@NonNull
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	Gender gender;
-	
+
 	@JsonbDateFormat(ApplicationInformation.DATE_FORMAT)
 	LocalDate birthDate;
 
 	String nickName;
-	
+
 	@Embedded
-	Contact contact;
+	Contact contact = new Contact();
 
 	@Tolerate
 	public Person() { // No-arg constructor for JPA mandatory

@@ -1,11 +1,7 @@
-/* -------------------------------------- Adapt below part ----------------------------------- */
-
-const component = 'member/home/Member.vue'
-const browserTabLabel = 'content.member.documentTitle'
-const titleLabel = 'content.member.title'
-
-/* -------------------------------------- Adapt above part ----------------------------------- */
+/* ---------------------------------------------------------------- 	Page entrypoint 	---------------------------------------------------------------- */
 
 import load from '@/template/default.js'
 
-load(component, browserTabLabel, titleLabel, true)
+load('member/home/Member.vue', 'member', true)
+
+/* ---------------------------------------------------------------- 	Page entrypoint 	---------------------------------------------------------------- */

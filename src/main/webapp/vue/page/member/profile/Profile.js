@@ -1,11 +1,7 @@
-/* -------------------------------------- Adapt below part ----------------------------------- */
-
-const component = 'member/profile/Profile.vue'
-const browserTabLabel = 'content.profile.documentTitle'
-const titleLabel = 'content.profile.title'
-
-/* -------------------------------------- Adapt above part ----------------------------------- */
+/* ---------------------------------------------------------------- 	Page entrypoint 	---------------------------------------------------------------- */
 
 import load from '@/template/default.js'
 
-load(component, browserTabLabel, titleLabel, true)
+load('member/profile/Profile.vue', 'profile', true)
+
+/* ---------------------------------------------------------------- 	Page entrypoint 	---------------------------------------------------------------- */

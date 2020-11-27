@@ -17,5 +17,4 @@ public class Contact {
 	
 	@Embedded
 	Address address = new Address();
-
 }

@@ -3,11 +3,9 @@ import axios from "axios";
 export function translate(name) {
 
   // should store in cookie or session when language.data is empty!
-  return axios.get(process.env.VUE_APP_HOST_REST + "user/language").then(l => {
+  return axios.get("user/language").then(l => {
 
     var language
-
-    console.log(">> translating: " + name + "<<")
 
     if (l.data) {
 
@@ -19,8 +17,6 @@ export function translate(name) {
 
       if (getCookie("language") != "") {
 
-        console.log(">>cookie: " + getCookie("language") + "<<")
-
         language = getCookie("language")
 
       } else {
@@ -29,9 +25,10 @@ export function translate(name) {
       }
     }
 
+    console.log(">> translating: " + name + " for language: " + language + "<<")
+
     return axios
       .get(
-        process.env.VUE_APP_HOST_REST +
         "translation/" +
         language +
         "/" + name
@@ -66,8 +63,8 @@ export async function updateLanguage(language) {
 
   setCookie("language", language)
 
-  if (await axios.get(process.env.VUE_APP_HOST_REST + "user/language").then(l => { return l.data })) {
+  if (await axios.get("user/language").then(l => { return l.data })) {
 
-    axios.get(process.env.VUE_APP_HOST_REST + "user/changeLanguage/" + language)
+    axios.get("user/changeLanguage/" + language)
   }
 }

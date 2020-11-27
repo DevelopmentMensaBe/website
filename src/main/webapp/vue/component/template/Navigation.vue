@@ -42,24 +42,24 @@
 				</li>
 
 				<li class="nav-item mx-auto">
-					<a href @click="changeLanguage('nederlands')" class="nav-link roundLinkIcon">
+					<a href @click="changeLanguage('dutch')" class="nav-link roundLinkIcon">
 						<img src="/design/layout/image/icon/Dutch.png" width="25" height="25" />
 					</a>
-					<a href @click="changeLanguage('nederlands')" class="nav-link topBottomSlideIn">{{label.dutch}}</a>
+					<a href @click="changeLanguage('dutch')" class="nav-link topBottomSlideIn">{{label.dutch}}</a>
 				</li>
 
 				<li class="nav-item mx-auto">
-					<a href @click="changeLanguage('francais')" class="nav-link roundLinkIcon">
+					<a href @click="changeLanguage('french')" class="nav-link roundLinkIcon">
 						<img src="/design/layout/image/icon/French.png" width="25" height="25" />
 					</a>
-					<a href @click="changeLanguage('francais')" class="nav-link topBottomSlideIn">{{label.french}}</a>
+					<a href @click="changeLanguage('french')" class="nav-link topBottomSlideIn">{{label.french}}</a>
 				</li>
 
 				<li class="nav-item mx-auto">
-					<a href @click="changeLanguage('deutsch')" class="nav-link roundLinkIcon">
+					<a href @click="changeLanguage('german')" class="nav-link roundLinkIcon">
 						<img src="/design/layout/image/icon/German.png" width="25" height="25" />
 					</a>
-					<a href @click="changeLanguage('deutsch')" class="nav-link topBottomSlideIn">{{label.german}}</a>
+					<a href @click="changeLanguage('german')" class="nav-link topBottomSlideIn">{{label.german}}</a>
 				</li>
 
 				<li class="nav-item mx-auto" v-if="!loggedIn">
@@ -165,7 +165,7 @@ export default {
 		);
 
 		axios
-			.get(process.env.VUE_APP_HOST_REST + `session/checkLoggedIn`)
+			.get(process.env.VUE_APP_HOST_REST + "session/checkLoggedIn")
 			.then(response => {
 				this.loggedIn = response.data;
 			});

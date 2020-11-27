@@ -1,11 +1,7 @@
-/* -------------------------------------- Adapt below part ----------------------------------- */
-
-const component = 'public/test/Test.vue'
-const browserTabLabel = 'content.test.documentTitle'
-const titleLabel = 'content.test.title'
-
-/* -------------------------------------- Adapt above part ----------------------------------- */
+/* ---------------------------------------------------------------- 	Page entrypoint 	---------------------------------------------------------------- */
 
 import load from '@/template/default.js'
 
-load(component, browserTabLabel, titleLabel, false)
+load('public/test/Test.vue', 'test', false)
+
+/* ---------------------------------------------------------------- 	Page entrypoint 	---------------------------------------------------------------- */
