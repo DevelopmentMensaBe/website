@@ -23,13 +23,20 @@ import Title from '@/component/template/Title.vue'
 import Footer from '@/component/template/Footer.vue'
 
 // Application Core: constants												-------------------------------------------------------------------------------- */
-export const TitleOptions = {
-	DEFAULT: "Mensa Belgium",
+const TitleOptions = {
+	DEFAULT: "Mensa.be",
 	PAGE: "Mensa - "
 };
 
-// Application Core: build layout											-------------------------------------------------------------------------------- */
-export function load(content, documentTitle, title, member) {
+// Application Logic: translation
+import { translate } from "@/component/common/LanguageLogic.js";
+
+// Component Logic: build layout											-------------------------------------------------------------------------------- */
+export default async function load(content, browserTab, title, member) {
+
+	var documentTitle = await translate(browserTab).then(t => { return t.data })
+
+	// await translate(browserTab).then(t => { documentTitle = t.data })
 
 	// set the document title for the browser tab name, we don't do it in the header. 
 	// this is different then the title on the page itself (heading or h1 - see further)
@@ -46,7 +53,7 @@ export function load(content, documentTitle, title, member) {
 	createApp(Navigation).mount('#navigation')
 
 	const titleApp = createApp(Title);
-	titleApp.config.globalProperties.title = title;
+	titleApp.config.globalProperties.title = await translate(title).then(t => { return t.data });
 	titleApp.mount('#title')
 
 	createApp(defineAsyncComponent(() => import('@/page/' + content))).mount('#content')

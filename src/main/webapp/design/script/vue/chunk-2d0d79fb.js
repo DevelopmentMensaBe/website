@@ -1,1 +1,1 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d79fb"],{7837:function(c,s,t){"use strict";t.r(s);var e=t("279c");const n="public/test/Test.vue",o="IQ Test",p=o;Object(e["a"])(n,o,p,!1)}}]);
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0d79fb"],{7837:function(t,e,n){"use strict";n.r(e);var c=n("279c");const s="public/test/Test.vue",o="content.test.documentTitle",i="content.test.title";Object(c["a"])(s,o,i,!1)}}]);

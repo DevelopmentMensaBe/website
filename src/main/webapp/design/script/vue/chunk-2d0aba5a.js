@@ -1,1 +1,1 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0aba5a"],{"15bb":function(e,n,o){"use strict";o.r(n);var b=o("279c");const c="member/home/Member.vue",d="Ledengedeelte",t="Welkom bij het gedeelte voor de leden";Object(b["a"])(c,d,t,!0)}}]);
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0aba5a"],{"15bb":function(e,n,t){"use strict";t.r(n);var c=t("279c");const b="member/home/Member.vue",o="content.member.documentTitle",m="content.member.title";Object(c["a"])(b,o,m,!0)}}]);

@@ -1,12 +1,11 @@
 /* -------------------------------------- Adapt below part ----------------------------------- */
 
 const component = 'public/home/Home.vue'
-
-// needs translation
-const page = 'Welkom'
-const title = `Welkom bij <em><span class="text-secondary">Mensa</span></em>`
+const browserTabLabel = 'content.welcome.documentTitle'
+const titleLabel = 'content.welcome.title'
 
 /* -------------------------------------- Adapt above part ----------------------------------- */
 
-import { load } from '@/template/default.js'
-load(component, page, title, false)
+import load from '@/template/default.js'
+
+load(component, browserTabLabel, titleLabel, false)

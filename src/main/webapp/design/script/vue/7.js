@@ -8,7 +8,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  data() {\n    return {\n      message: \"Welkom bezoeker op deze nieuwe versie met Vue\"\n    };\n  }\n\n});\n\n//# sourceURL=webpack:///./src/main/webapp/vue/page/public/home/Home.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _component_common_LanguageLogic_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/component/common/LanguageLogic.js */ \"./src/main/webapp/vue/component/common/LanguageLogic.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  data() {\n    return {\n      message: null\n    };\n  },\n\n  beforeCreate() {\n    Object(_component_common_LanguageLogic_js__WEBPACK_IMPORTED_MODULE_0__[\"translate\"])(\"content.welcome.message\").then(t => this.message = t.data);\n  }\n\n});\n\n//# sourceURL=webpack:///./src/main/webapp/vue/page/public/home/Home.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
 
 /***/ }),
 

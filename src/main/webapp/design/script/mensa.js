@@ -4,38 +4,40 @@ window.onload = navIconAnimation;
 function navIconAnimation() {
 
 	let icon = document.querySelector('.navbar-toggler-icon-animated');
-	
-	icon.addEventListener('click', (event) => {
-	    icon.classList.toggle("open");
-	  });
+
+	if (icon) {
+		icon.addEventListener('click', () => {
+			icon.classList.toggle("open");
+		});
+	}
 }
 
 // Needed for conditional rendering depending on menu collapsed state
-$(document).ready(function(){
+$(document).ready(function () {
 
 	$('#collapsibleNavbar').on('show.bs.collapse', function () {
-      $('.nav-languages').css('display', 'flex');
+		$('.nav-languages').css('display', 'flex');
 	});
 
 	$('#collapsibleNavbar').on('hidden.bs.collapse', function () {
-      $('.nav-languages').css('display', 'none');
+		$('.nav-languages').css('display', 'none');
 	});
-	
+
 });
 
 // Needed for conditional rendering depending on screen size
-$(window).on('orientationchange',function(){
+$(window).on('orientationchange', function () {
 
-	if(window.innerHeight > window.innerWidth){
-    	//portrait
-    	
-      $('.nav-languages').css('display', 'none');
+	if (window.innerHeight > window.innerWidth) {
+		//portrait
+
+		$('.nav-languages').css('display', 'none');
 	}
-	
-	if(window.innerWidth > window.innerHeight){
-    	//landscape
-    	
-	  $('.nav-languages').css('display', 'flex');
+
+	if (window.innerWidth > window.innerHeight) {
+		//landscape
+
+		$('.nav-languages').css('display', 'flex');
 	}
 
 });

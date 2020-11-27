@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
 
 import be.mensa.application.website.data.schema.dynamic.person.Person;
+import be.mensa.application.website.data.schema.fixed.Language;
 import be.mensa.application.website.data.schema.fixed.Role;
 import ci.intern.module.database.schema.main.MainTable;
 import lombok.Data;
@@ -36,7 +37,7 @@ public class ApplicationUser extends MainTable {
 
 	@NonNull
 	@Column(nullable = false, unique = true)
-	String username;
+	String username, mensaId;
 
 	@NonNull
 	@Column(nullable = false)
@@ -46,6 +47,11 @@ public class ApplicationUser extends MainTable {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	Role role;
+	
+	@NonNull
+	@Column(nullable = false)
+	@Enumerated(EnumType.STRING)
+	Language language;
 
 	@Tolerate
 	public ApplicationUser() { // No-arg constructor for JPA is mandatory

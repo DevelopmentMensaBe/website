@@ -1,12 +1,11 @@
 /* -------------------------------------- Adapt below part ----------------------------------- */
 
 const component = 'public/test/Test.vue'
-
-// needs translation
-const page = 'IQ Test'
-const title = page
+const browserTabLabel = 'content.test.documentTitle'
+const titleLabel = 'content.test.title'
 
 /* -------------------------------------- Adapt above part ----------------------------------- */
 
-import { load } from '@/template/default.js'
-load(component, page, title, false)
+import load from '@/template/default.js'
+
+load(component, browserTabLabel, titleLabel, false)

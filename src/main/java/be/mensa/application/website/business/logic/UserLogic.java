@@ -12,12 +12,14 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import be.mensa.application.website.data.operator.security.UserOperator;
 import be.mensa.application.website.data.schema.dynamic.security.ApplicationUser;
+import be.mensa.application.website.data.schema.fixed.Language;
 
 /**
  * Contains common application information.
@@ -29,7 +31,7 @@ import be.mensa.application.website.data.schema.dynamic.security.ApplicationUser
  */
 @Named
 @Stateless
-@Path("users")
+@Path("user")
 public class UserLogic {
 
 	@Resource
@@ -61,6 +63,34 @@ public class UserLogic {
 
 		return Response.ok().entity(userOperator.get().findUser(sessionContext.getCallerPrincipal().getName())).header("Access-Control-Allow-Origin", "*")
 				.build();
+	}
+
+	@GET
+	@Path("language")
+	@Produces(MediaType.APPLICATION_JSON)
+	@PermitAll
+	public Response getLanguage() {
+
+		if (sessionContext.getCallerPrincipal().getName().equals("anonymous"))
+			return Response.ok().build();
+		else
+			return Response.ok().entity(userOperator.get().findUser(sessionContext.getCallerPrincipal().getName()).getLanguage().toString())
+					.header("Access-Control-Allow-Origin", "*").build();
+
+	}
+
+	@GET
+	@Path("changeLanguage/{language}")
+	@PermitAll
+	public Response changeLanguage(@PathParam(value = "language") String language) {
+
+		var applicationUser = userOperator.get().findUser(sessionContext.getCallerPrincipal().getName());
+
+		applicationUser.setLanguage(Language.valueOf(language));
+
+		userOperator.get().save(applicationUser);
+
+		return Response.ok().header("Access-Control-Allow-Origin", "*").build();
 	}
 
 	@POST

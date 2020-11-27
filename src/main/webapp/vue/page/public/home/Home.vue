@@ -6,11 +6,16 @@
 </template>
 
 <script>
+import { translate } from "@/component/common/LanguageLogic.js";
+
 export default {
   data() {
     return {
-      message: "Welkom bezoeker op deze nieuwe versie met Vue"
+      message: null
     };
+  },
+  beforeCreate() {
+    translate("content.welcome.message").then(t => (this.message = t.data));
   }
 };
 </script>

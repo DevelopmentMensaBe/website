@@ -14,6 +14,7 @@ import be.mensa.application.website.data.schema.dynamic.common.Contact;
 import be.mensa.application.website.data.schema.dynamic.person.Person;
 import be.mensa.application.website.data.schema.dynamic.security.ApplicationUser;
 import be.mensa.application.website.data.schema.fixed.Gender;
+import be.mensa.application.website.data.schema.fixed.Language;
 import be.mensa.application.website.data.schema.fixed.Role;
 
 /**
@@ -58,8 +59,8 @@ public class SecurityApplicationData {
 
 		person.setContact(contact);
 
-		userOperator.add(
-				new ApplicationUser(person, "mbe", "7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.member));
+		userOperator.add(new ApplicationUser(person, "mbe", "MBE1234",
+				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.member, Language.english));
 
 		person = new Person();
 
@@ -67,8 +68,8 @@ public class SecurityApplicationData {
 		person.setLastName("Usai");
 		person.setGender(Gender.Male);
 
-		userOperator.add(
-				new ApplicationUser(person, "fusai", "7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.admin));
+		userOperator.add(new ApplicationUser(person, "fusai", "MBE4248",
+				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.admin, Language.nederlands));
 
 		person = new Person();
 
@@ -76,8 +77,8 @@ public class SecurityApplicationData {
 		person.setLastName("De Pryck");
 		person.setGender(Gender.Male);
 
-		userOperator.add(new ApplicationUser(person, "tdepryck", "7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==",
-				Role.board));
+		userOperator.add(new ApplicationUser(person, "tdepryck", "MBE0001",
+				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.board, Language.francais));
 
 		person = new Person();
 
@@ -85,7 +86,7 @@ public class SecurityApplicationData {
 		person.setLastName("Morena");
 		person.setGender(Gender.Female);
 
-		userOperator.add(new ApplicationUser(person, "nmorena", "7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==",
-				Role.visitor));
+		userOperator.add(new ApplicationUser(person, "nmorena", "MBE4444",
+				"7iaw3Ur350mqGo7jwQrpkj9hiYB3Lkc/iBml1JQODbJ6wYX4oOHV+E+IvIh/1nsUNzLDBMxfqa2Ob1f1ACio/w==", Role.visitor, Language.deutsch));
 	}
 }

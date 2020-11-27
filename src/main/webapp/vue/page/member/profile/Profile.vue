@@ -2,19 +2,27 @@
   <main>
     <form class="p-fluid p-formgrid p-grid mx-auto" @submit.prevent="save">
       <div class="p-field p-col-12">
-        <label for="firstName">Member Id:&nbsp;</label>
-        <label id="firstName">MBE_0001</label>
+        <label for="mensaId">{{label.mensaId}}:&nbsp;</label>
+        <label id="mensaId">{{user.mensaId}}</label>
+      </div>
+      <div class="p-field p-col-12">
+        <label for="role">{{label.role}}:&nbsp;</label>
+        <label id="role">{{user.role}}</label>
+      </div>
+      <div class="p-field p-col-12">
+        <label for="language">{{label.language}}:&nbsp;</label>
+        <label id="language">{{user.language}}</label>
       </div>
       <div class="p-field p-col-12 p-md-6">
-        <label>First Name</label>
+        <label>{{label.firstName}}e</label>
         <inputText v-model="user.person.firstName" />
       </div>
       <div class="p-field p-col-12 p-md-6">
-        <label>Last Name</label>
+        <label>{{label.lastName}}</label>
         <inputText v-model="user.person.lastName" />
       </div>
       <div class="p-field p-col-12">
-        <label>Birth date</label>
+        <label>{{label.birthDate}}</label>
         <calendar
           v-model="user.person.birthDate"
           dateFormat="dd/mm/yy"
@@ -24,24 +32,24 @@
         />
       </div>
       <div class="p-field p-col-12">
-        <label>Street</label>
+        <label>{{label.street}}</label>
         <inputText id="street" type="text" v-model="user.person.contact.address.street" />
       </div>
       <div class="p-field p-col-12 p-md-3">
-        <label for="number">Number</label>
+        <label for="number">{{label.number}}</label>
         <inputText id="number" type="text" v-model="user.person.contact.address.number" />
       </div>
       <div class="p-field p-col-12 p-md-3">
-        <label for="zip">Zip</label>
+        <label for="zip">{{label.zip}}</label>
         <inputText id="zip" type="text" v-model="user.person.contact.address.zipCode" />
       </div>
       <div class="p-field p-col-12 p-md-6">
-        <label for="city">City</label>
+        <label for="city">{{label.city}}</label>
         <inputText id="city" type="text" v-model="user.person.contact.address.city" />
       </div>
       <div class="p-field p-col-12">
         <span class="spanBorderSlideIn">
-          <button type="submit" class="buttonBorderSlideIn">Save</button>
+          <button type="submit" class="buttonBorderSlideIn">{{label.save}}</button>
         </span>
       </div>
     </form>
@@ -50,6 +58,7 @@
 
 <script>
 import axios from "axios";
+// import { translate } from "@/component/common/LanguageLogic.js";
 
 import inputText from "primevue/inputtext";
 import calendar from "primevue/calendar";
@@ -57,6 +66,19 @@ import calendar from "primevue/calendar";
 export default {
   data() {
     return {
+      label: {
+        mensaId: null,
+        role: null,
+        language: null,
+        firstName: null,
+        lastName: null,
+        birthDate: null,
+        street: null,
+        number: null,
+        zip: null,
+        city: null,
+        save: null
+      },
       user: {
         person: { contact: { address: {} } }
       }
@@ -68,7 +90,7 @@ export default {
   },
   created() {
     axios
-      .get(process.env.VUE_APP_HOST_REST + "users/loggedInUser")
+      .get(process.env.VUE_APP_HOST_REST + "user/loggedInUser")
       .then(resp => (this.user = resp.data));
   },
   methods: {
@@ -83,7 +105,7 @@ export default {
       }
 
       axios
-        .post(process.env.VUE_APP_HOST_REST + "users/save", this.user, {
+        .post(process.env.VUE_APP_HOST_REST + "user/save", this.user, {
           headers: {
             "Content-Type": "application/json"
           }

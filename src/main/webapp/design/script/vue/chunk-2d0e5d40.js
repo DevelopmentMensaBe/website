@@ -1,1 +1,1 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e5d40"],{"95c1":function(e,c,n){"use strict";n.r(c);var s=n("279c");const o="public/home/Home.vue",a="Welkom",p='Welkom bij <em><span class="text-secondary">Mensa</span></em>';Object(s["a"])(o,a,p,!1)}}]);
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e5d40"],{"95c1":function(e,c,n){"use strict";n.r(c);var o=n("279c");const t="public/home/Home.vue",w="content.welcome.documentTitle",i="content.welcome.title";Object(o["a"])(t,w,i,!1)}}]);

@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import be.mensa.application.website.data.preprod.security.SecurityApplicationData;
+import be.mensa.application.website.data.preprod.security.TranslationApplicationData;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -31,6 +32,9 @@ public class ApplicationData {
 	@Inject
 	SecurityApplicationData securityApplicationData;
 
+	@Inject
+	TranslationApplicationData translationApplicationData;
+
 	/**
 	 * Starts inserting test data based on different use cases and different deployment environments
 	 */
@@ -51,6 +55,9 @@ public class ApplicationData {
 
 				log.info("generate security data");
 				securityApplicationData.generateData();
+
+				log.info("generate translate data");
+				translationApplicationData.generateData();
 			}
 		}
 
