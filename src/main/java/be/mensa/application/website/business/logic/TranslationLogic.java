@@ -1,6 +1,7 @@
 package be.mensa.application.website.business.logic;
 
 import javax.ejb.Singleton;
+import javax.ejb.Startup;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -21,6 +22,7 @@ import be.mensa.application.website.data.schema.fixed.Language;
  * @since 1.0.0
  *
  */
+@Startup
 @Singleton
 @Path("translation")
 public class TranslationLogic {
@@ -29,15 +31,27 @@ public class TranslationLogic {
 	Instance<TranslationOperator> translationOperator;
 
 	@GET
-	@Path("{name}/{language}")
+	@Path("{language}/{name}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response translate(@PathParam(value = "name") String name, @PathParam(value = "language") String language) {
+	public Response translateRequest(@PathParam(value = "name") String name, @PathParam(value = "language") String language) {
+
+		return Response.ok().entity(translate(name, Language.valueOf(language))).header("Access-Control-Allow-Origin", "*").build();
+	}
+
+	/**
+	 * Gets the translated text for the given name and language
+	 *
+	 * @param name
+	 * @param language
+	 * @return translated text
+	 */
+	public String translate(String name, Language language) {
 
 		var translation = translationOperator.get().translate(name);
 
 		var translatedText = "";
 
-		switch (Language.valueOf(language)) {
+		switch (language) {
 
 		case english:
 			translatedText = translation.getEnglish();
@@ -54,13 +68,9 @@ public class TranslationLogic {
 		case deutsch:
 			translatedText = translation.getDeutsch();
 			break;
-
-		default:
-			translatedText = translation.getEnglish();
-			break;
 		}
 
-		return Response.ok().entity(translatedText).header("Access-Control-Allow-Origin", "*").build();
+		return translatedText;
 	}
 
 }

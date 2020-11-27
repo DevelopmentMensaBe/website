@@ -1,5 +1,7 @@
 package be.mensa.application.website.business.logic;
 
+import java.text.MessageFormat;
+
 import javax.annotation.Resource;
 import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
@@ -7,7 +9,6 @@ import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -29,7 +30,6 @@ import be.mensa.application.website.data.schema.fixed.Language;
  * @since 1.0.0
  *
  */
-@Named
 @Stateless
 @Path("user")
 public class UserLogic {
@@ -40,18 +40,20 @@ public class UserLogic {
 	@Inject
 	Instance<UserOperator> userOperator;
 
-	@PermitAll
-	public String getWelcomeMessage() {
-
-		return "Welkom bezoeker";
-	}
+	@Inject
+	TranslationLogic translationLogic;
 
 	@GET
 	@Path("message")
 	@RolesAllowed({ "member", "admin", "board" })
 	public Response getMemberMessage() {
 
-		return Response.ok().entity("Hallo lid van Mensa: " + sessionContext.getCallerPrincipal().getName()).header("Access-Control-Allow-Origin", "*").build();
+		var applicationUser = userOperator.get().findUser(sessionContext.getCallerPrincipal().getName());
+
+		var translation = translationLogic.translate("content.member.message", applicationUser.getLanguage());
+
+		return Response.ok().entity(MessageFormat.format(translation, sessionContext.getCallerPrincipal().getName(), applicationUser.getMensaId()))
+				.header("Access-Control-Allow-Origin", "*").build();
 
 	}
 

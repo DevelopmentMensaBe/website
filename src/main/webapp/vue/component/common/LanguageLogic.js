@@ -7,8 +7,7 @@ export function translate(name) {
 
     var language
 
-    // console.log(">>user language: " + l.data + "<<")
-    // console.log(">>cookie: " + getCookie("language") + "<<")
+    console.log(">> translating: " + name + "<<")
 
     if (l.data) {
 
@@ -19,6 +18,8 @@ export function translate(name) {
     } else {
 
       if (getCookie("language") != "") {
+
+        console.log(">>cookie: " + getCookie("language") + "<<")
 
         language = getCookie("language")
 
@@ -32,8 +33,8 @@ export function translate(name) {
       .get(
         process.env.VUE_APP_HOST_REST +
         "translation/" +
-        name +
-        "/" + language
+        language +
+        "/" + name
       )
   })
 }
@@ -63,10 +64,10 @@ function getCookie(cname) {
 
 export async function updateLanguage(language) {
 
+  setCookie("language", language)
+
   if (await axios.get(process.env.VUE_APP_HOST_REST + "user/language").then(l => { return l.data })) {
 
     axios.get(process.env.VUE_APP_HOST_REST + "user/changeLanguage/" + language)
   }
-
-  setCookie("language", language)
 }

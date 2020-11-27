@@ -28,3 +28,14 @@ hs_err_pid*
 # local env files
 .env.local
 .env.*.local
+src/main/webapp/design/script/vue/0.js
+src/main/webapp/design/script/vue/1.js
+src/main/webapp/design/script/vue/2.js
+src/main/webapp/design/script/vue/3.js
+src/main/webapp/design/script/vue/4.js
+src/main/webapp/design/script/vue/5.js
+src/main/webapp/design/script/vue/6.js
+src/main/webapp/design/script/vue/7.js
+src/main/webapp/design/script/vue/8.js
+src/main/webapp/design/script/vue/9.js
+5.css

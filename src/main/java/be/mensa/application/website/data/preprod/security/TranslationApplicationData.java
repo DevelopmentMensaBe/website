@@ -63,6 +63,13 @@ public class TranslationApplicationData {
 		translationOperator.add(new Translation("content.member.documentTitle", "Members", "Leden", "Membres", "Mitglieden"));
 		translationOperator.add(new Translation("content.member.title", "Members", "Leden", "Membres", "Mitglieden"));
 
+		var contentMemberMessageEnglish = "Hello member of Mensa with user name {0} and member id {1}. <br /><br /><br /> This new website uses 2020 web technologies like Vue 3 and PrimeVue 3 ";
+		var contentMemberMessageDutch = "Hallo lid van Mensa met gebruikersnaam {0} en lid id {1}. <br /><br /><br /> Deze nieuwe website gebruikt 2020 web technologieën zoals Vue 3 en  PrimeVue 3 ";
+		var contentMemberMessageFrench = "Bonjour membre de Mensa avec le nom d'utilisateur {0} et l'identifiant de membre {1}. <br /><br /><br /> Ce nouveau site web utilise les technologies web 2020 comme Vue 3 et PrimeVue 3 ";
+		var contentMemberMessageGerman = "Hallo Mitglied von Mensa mit Benutzername {0} und Mitglieds-ID {1}. <br /><br /><br /> Diese neue Website verwendet 2020-Webtechnologien wie Vue 3 und PrimeVue 3 ";
+		translationOperator.add(new Translation("content.member.message", contentMemberMessageEnglish, contentMemberMessageDutch, contentMemberMessageFrench,
+				contentMemberMessageGerman));
+
 		// Content - events page
 		translationOperator.add(new Translation("content.events.documentTitle", "Events", "Activiteiten", "'Evénements", "Veranstaltungen"));
 		translationOperator.add(new Translation("content.events.title", "Events", "Activiteiten", "'Evénements", "Veranstaltungen"));
