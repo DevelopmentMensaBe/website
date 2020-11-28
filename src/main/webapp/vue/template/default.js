@@ -57,7 +57,9 @@ export default async function load(content, title, member) {
 	if (member) {
 
 		axios.get('session/logIn');
+		console.log("member log in")
 	}
+
 
 	// start building the page, with the header, navigation, title, content, footer
 	createApp(Header).mount('#header')

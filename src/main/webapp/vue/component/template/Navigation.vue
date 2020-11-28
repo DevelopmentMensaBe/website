@@ -1,7 +1,7 @@
 <template>
 	<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
 		<a class="navbar-brand" href="/">
-			<img src="/design/layout/image/logo/mensa-logo.png" width="30" height="30" />
+			<img src="/design/layout/image/logo/mensa-logo.png" width="50" height="50" />
 		</a>
 
 		<button

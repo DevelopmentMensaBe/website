@@ -21,7 +21,7 @@ public class TranslationApplicationData {
 	TranslationOperator translationOperator;
 
 	enum page {
-		home, test, member, profile, events
+		home, test, authentication, member, profile, events
 	}
 
 	enum language {
@@ -34,6 +34,8 @@ public class TranslationApplicationData {
 	static final String LABEL_COMMON_ACTION = "label.common.action.";
 
 	static final String LABEL_DOCUMENT_TITLE = "label.document.title.";
+
+	static final String LABEL_PAGE_AUTHENTICATION_FORM = "label.page.authentication.form.";
 
 	static final String LABEL_PAGE_PROFILE_FORM = "label.page.profile.form.";
 
@@ -49,6 +51,7 @@ public class TranslationApplicationData {
 		// navigation
 		translationOperator.add(new Translation(LABEL_COMMON_NAVIGATION_PAGE + page.home, "Welcome", "Welkom", "Bienvenue", "Wilkommen"));
 		translationOperator.add(new Translation(LABEL_COMMON_NAVIGATION_PAGE + page.test, "IQ Test", "IQ Test", "Test IQ", "IQ Test"));
+		translationOperator.add(new Translation(LABEL_COMMON_NAVIGATION_PAGE + page.authentication, "Login", "Aanmelden", "Connecter", "Einloggen"));
 		translationOperator.add(new Translation(LABEL_COMMON_NAVIGATION_PAGE + page.member, "Members", "Leden", "Membres", "Mitglieden"));
 		translationOperator.add(new Translation(LABEL_COMMON_NAVIGATION_PAGE + page.profile, "My Profile", "Mijn profiel", "Mon Profil", "Mein Profil"));
 		translationOperator.add(new Translation(LABEL_COMMON_NAVIGATION_PAGE + page.events, "Events", "Activiteiten", "Evénements", "Veranstaltungen"));
@@ -64,12 +67,25 @@ public class TranslationApplicationData {
 
 		// actions
 		translationOperator.add(new Translation(LABEL_COMMON_ACTION + "save", "Save", "Bewaren", "Sauvegarder", "Bewahren"));
+		translationOperator.add(new Translation(LABEL_COMMON_ACTION + "submit", "Submit", "Verzenden", "Soumettre", "Einreichen"));
 
 		// Label - welcome page
 		translationOperator.add(new Translation(LABEL_DOCUMENT_TITLE + page.home, "Welcome", "Welkom", "Bienvenu", "Wilkommen"));
 
 		// Label - test page
 		translationOperator.add(new Translation(LABEL_DOCUMENT_TITLE + page.test, "IQ Test", "IQ Test", "Test IQ", "IQ Test"));
+
+		// Label - authentication page
+		translationOperator.add(new Translation(LABEL_DOCUMENT_TITLE + page.authentication, "Login", "Aanmelden", "Connecter", "Einloggen"));
+		translationOperator.add(new Translation(LABEL_PAGE_AUTHENTICATION_FORM + "username", "User Name", "Gebruikersnaam", "Nom D'Utilisateur", "Nutzername"));
+		translationOperator.add(new Translation(LABEL_PAGE_AUTHENTICATION_FORM + "password", "Password", "Wachtwoord", "Mot De Passe", "Passwort"));
+		var authenticationFailedEnglish = "Login failed. Have you entered the correct password?";
+		var authenticationFailedDutch = "Aanmelden mislukt. Heb je zeker het juiste wachtwoord ingevoerd?";
+		var authenticationFailedFrench = "Échec de la connexion. Avez-vous entré le mot de passe correct?";
+		var authenticationFailedGerman = "Login fehlgeschlagen. Haben Sie das richtige Passwort eingegeben?";
+		translationOperator.add(new Translation(LABEL_PAGE_AUTHENTICATION_FORM + "failed", authenticationFailedEnglish, authenticationFailedDutch,
+				authenticationFailedFrench, authenticationFailedGerman));
+		translationOperator.add(new Translation(LABEL_PAGE_AUTHENTICATION_FORM + "again", "Again", "Opnieuw proberen", "Réessayer", "Nochmal Versuchen"));
 
 		// Label - member page
 		translationOperator.add(new Translation(LABEL_DOCUMENT_TITLE + page.member, "Members", "Leden", "Membres", "Mitglieden"));
@@ -100,6 +116,9 @@ public class TranslationApplicationData {
 
 		// Content - test page
 		translationOperator.add(new Translation(CONTENT_TITLE + page.test, "IQ Test", "IQ Test", "Test IQ", "IQ Test"));
+
+		// Content - authentication page
+		translationOperator.add(new Translation(CONTENT_TITLE + page.authentication, "Login", "Aanmelden", "Connecter", "Einloggen"));
 
 		// Content - member page
 		translationOperator.add(new Translation(CONTENT_TITLE + page.member, "Members", "Leden", "Membres", "Mitglieden"));

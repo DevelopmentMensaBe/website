@@ -1,119 +1,48 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:h="http://java.sun.com/jsf/html">
+<html>
 
 	<head>
 
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-		<meta http-equiv="Expires" content="3600"/>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+		<meta http-equiv="Expires" content="3600">
 
-		<link rel="icon" href="/design/layout/image/icon/fav/favicon.ico"/>
+		<link rel="icon" href="/design/layout/image/icon/fav/mensa-be-favicon.ico">
 
-		<title>Default</title>
+		<title>Mensa.be</title>
 
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="/design/script/mensa.js"></script>
 
-		<link rel="stylesheet" href="/design/style/sheet/html-finetuning.css"/>
-		<link rel="stylesheet" href="/design/style/sheet/css-effects.css"/>
-		<link rel="stylesheet" href="/design/style/sheet/bootstrap-mensa.css"/>
-		<link rel="stylesheet" href="/design/style/sheet/bootstrap-reset.css"/>
-		<link rel="stylesheet" href="/design/style/sheet/mensa-custom.css"/>
+		<link rel="stylesheet" href="/design/style/sheet/html-finetuning.css">
+		<link rel="stylesheet" href="/design/style/sheet/css-effects.css">
+		<link rel="stylesheet" href="/design/style/sheet/bootstrap-mensa.css">
+		<link rel="stylesheet" href="/design/style/sheet/bootstrap-reset.css">
+		<link rel="stylesheet" href="/design/style/sheet/primevue-mensa.css">
+		<link rel="stylesheet" href="/design/style/sheet/mensa-custom.css">
 
-	</head>
+	<link href="/design/script/vue/0.js" rel="prefetch"/><link href="/design/script/vue/1.js" rel="prefetch"/><link href="/design/script/vue/10.js" rel="prefetch"/><link href="/design/script/vue/11.js" rel="prefetch"/><link href="/design/script/vue/12.js" rel="prefetch"/><link href="/design/script/vue/13.js" rel="prefetch"/><link href="/design/script/vue/2.js" rel="prefetch"/><link href="/design/script/vue/3.js" rel="prefetch"/><link href="/design/script/vue/4.js" rel="prefetch"/><link href="/design/script/vue/5.js" rel="prefetch"/><link href="/design/script/vue/6.js" rel="prefetch"/><link href="/design/script/vue/7.js" rel="prefetch"/><link href="/design/script/vue/8.js" rel="prefetch"/><link href="/design/script/vue/9.js" rel="prefetch"/><link href="/design/style/sheet/vue/7.css" rel="prefetch"/><link href="/design/script/vue/authentication-failed.js" rel="preload" as="script"/><link href="/design/script/vue/chunk-common.js" rel="preload" as="script"/><link href="/design/script/vue/chunk-vendors.js" rel="preload" as="script"/><link href="/design/style/sheet/vue/chunk-vendors.css" rel="preload" as="style"/><link href="/design/style/sheet/vue/chunk-vendors.css" rel="stylesheet"/></head>
 
 	<body>
 
+		<noscript>
+
+			<strong>We're sorry but our website doesn't work without JavaScript enabled. Please enable it to continue.</strong>
+
+		</noscript>
+
 		<section id="header"></section>
 
-		<section id="navigation">
+		<section id="navigation"></section>
 
-			<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-			    <a class="navbar-brand" href="/">
-			      <img src="/design/layout/image/logo/mensa-logo.png" width="30" height="30" />
-			    </a>
-			
-			    <button
-			      class="navbar-toggler"
-			      type="button"
-			      data-toggle="collapse"
-			      data-target="#collapsibleNavbar"
-			      id="test"
-			    >
-			      <div class="navbar-toggler-icon-animated">
-			        <span></span>
-			        <span></span>
-			        <span></span>
-			      </div>
-			    </button>
-			
-			    <div class="navbar-collapse collapse" id="collapsibleNavbar">
-			      <ul class="navbar-nav">
-			        <li class="nav-item mx-auto">
-			          <a class="nav-link topBottomSlideIn" href="/">Welkom</a>
-			        </li>
-			
-			        <li class="nav-item mx-auto">
-			          <a class="nav-link topBottomSlideIn" href="/test">IQ Test</a>
-			        </li>
-			
-			        <li class="nav-item mx-auto">
-			          <a class="nav-link topBottomSlideIn" href="/member/events">Activiteiten</a>
-			        </li>
-			      </ul>
-			
-			      <ul class="navbar-nav ml-auto">
-			        <li class="nav-item mx-auto">
-			          <a href="#" class="nav-link roundLinkIcon">
-			            <img src="/design/layout/image/icon/Dutch.png" width="25" height="25" />
-			          </a>
-			          <a href="#" class="nav-link topBottomSlideIn">Nederlands</a>
-			        </li>
-			
-			        <li class="nav-item mx-auto">
-			          <a href="#" class="nav-link roundLinkIcon">
-			            <img src="/design/layout/image/icon/French.png" width="25" height="25" />
-			          </a>
-			          <a href="#" class="nav-link topBottomSlideIn">Français</a>
-			        </li>
-			
-			        <li class="nav-item mx-auto">
-			          <a href="#" class="nav-link roundLinkIcon">
-			            <img src="/design/layout/image/icon/English.png" width="25" height="25" />
-			          </a>
-			          <a href="#" class="nav-link topBottomSlideIn">English</a>
-			        </li>
-			        
-			      </ul>
-			    </div>
-			  </nav>
-	
-		</section>
+		<section id="title" class="container-fluid text-center"></section>
 
-		<section id="title" class="container-fluid text-center fadeInAndSlideInFromBottom">
-		
-			<h1>Aanmelden</h1>
-			
-		</section>
+		<section id="content" class="content container-fluid text-center"></section>
 
-		<section id="content" class="content container-fluid text-center">
-	
-			<p>Aanmelden mislukt. Heb je zeker het juiste wachtwoord ingevoerd?</p>
-	
-			<span class="spanBorderSlideIn">
-				<button onclick="window.history.back()" class="buttonBorderSlideIn">Opnieuw proberen</button>
-			</span>
-	
-		</section>
-		
-		<section id="footer" class="footer text-center">
-		
-			<footer>Copyright Mensa 2020</footer>
-		
-		</section>
+		<section id="footer" class="footer text-center"></section>
 
-</body>
+	<script type="text/javascript" src="/design/script/vue/chunk-vendors.js"></script><script type="text/javascript" src="/design/script/vue/chunk-common.js"></script><script type="text/javascript" src="/design/script/vue/authentication-failed.js"></script></body>
 
 </html>
