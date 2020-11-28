@@ -25,7 +25,8 @@
 
 		<form-login-config>
 
-			<form-login-page>/authentication/authentication.xhtml</form-login-page>
+			<!-- <form-login-page>/authentication/authentication.xhtml</form-login-page> -->
+			<form-login-page>/authentication/authentication-original.xhtml</form-login-page>
 			<form-error-page>/authentication/authentication-failed.html?faces-redirect=true</form-error-page>
 
 		</form-login-config>

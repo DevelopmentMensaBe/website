@@ -71,18 +71,18 @@ module.exports = {
 		////////////////////////////////////////////////////////////////////////
 
 
-		'authentication': {
-			entry: vueWorkDirPath + '/page/authentication/Authentication.js',
-			template: vueWorkDirPath + '/template/faces.html',
-			filename: 'authentication/authentication.xhtml',
-			minify: {
-				// https://github.com/kangax/html-minifier
-				keepClosingSlash: true,
-				collapseWhitespace: false,
-			},
-			// https://github.com/jantimon/html-webpack-plugin
-			xhtml: true
-		},
+		// 'authentication': {
+		// 	entry: vueWorkDirPath + '/page/authentication/Authentication.js',
+		// 	template: vueWorkDirPath + '/template/faces.html',
+		// 	filename: 'authentication/authentication.xhtml',
+		// 	minify: {
+		// 		// https://github.com/kangax/html-minifier
+		// 		keepClosingSlash: true,
+		// 		collapseWhitespace: false,
+		// 	},
+		// 	// https://github.com/jantimon/html-webpack-plugin
+		// 	xhtml: true
+		// },
 
 		'authentication-failed': {
 			entry: vueWorkDirPath + '/page/authentication/AuthenticationFailed.js',

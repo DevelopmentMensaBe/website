@@ -10,7 +10,7 @@
 
 		<link rel="icon" href="/design/layout/image/icon/fav/mensa-be-favicon.ico"/>
 
-		<title>Default</title>
+		<title>#{userSession.translate('label.document.title.authentication')}</title>
 
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -53,49 +53,57 @@
 			    <div class="navbar-collapse collapse" id="collapsibleNavbar">
 			      <ul class="navbar-nav">
 			        <li class="nav-item mx-auto">
-			          <a class="nav-link topBottomSlideIn" href="/">Welkom</a>
+			          <a class="nav-link topBottomSlideIn" href="/">#{userSession.translate('label.common.navigation.page.home')}</a>
 			        </li>
 			
-			        <li class="nav-item mx-auto">
-			          <a class="nav-link topBottomSlideIn" href="/test">IQ Test</a>
-			        </li>
-			
-			        <li class="nav-item mx-auto">
-			          <a class="nav-link topBottomSlideIn" href="/member/events">Activiteiten</a>
-			        </li>
-			      </ul>
-			
+					<li class="nav-item mx-auto">
+						<a class="nav-link topBottomSlideIn" href="/test">#{userSession.translate('label.common.navigation.page.test')}</a>
+					</li>
+	
+					<li class="nav-item mx-auto">
+						<a class="nav-link topBottomSlideIn" href="/member/events">#{userSession.translate('label.common.navigation.page.events')}</a>
+					</li>
+				  </ul>
 			      <ul class="navbar-nav ml-auto">
-			        <li class="nav-item mx-auto">
-			          <a href="#" class="nav-link roundLinkIcon">
-			            <img src="/design/layout/image/icon/Dutch.png" width="25" height="25" />
-			          </a>
-			          <a href="#" class="nav-link topBottomSlideIn">Nederlands</a>
-			        </li>
 			
 			        <li class="nav-item mx-auto">
-			          <a href="#" class="nav-link roundLinkIcon">
-			            <img src="/design/layout/image/icon/French.png" width="25" height="25" />
-			          </a>
-			          <a href="#" class="nav-link topBottomSlideIn">Français</a>
-			        </li>
-			
-			        <li class="nav-item mx-auto">
-			          <a href="#" class="nav-link roundLinkIcon">
+			          <a href="" onclick="changeLanguage('english')" class="nav-link roundLinkIcon">
 			            <img src="/design/layout/image/icon/English.png" width="25" height="25" />
 			          </a>
-			          <a href="#" class="nav-link topBottomSlideIn">English</a>
+			          <a href="" onclick="changeLanguage('english')" class="nav-link topBottomSlideIn">#{userSession.translate('label.common.navigation.language.english')}</a>
 			        </li>
 			        
+			        <li class="nav-item mx-auto">
+			          <a href="" onclick="changeLanguage('dutch')" class="nav-link roundLinkIcon">
+			            <img src="/design/layout/image/icon/Dutch.png" width="25" height="25" />
+			          </a>
+			          <a href="" onclick="changeLanguage('dutch')" class="nav-link topBottomSlideIn">#{userSession.translate('label.common.navigation.language.dutch')}</a>
+			        </li>
+			
+			        <li class="nav-item mx-auto">
+			          <a href="" onclick="changeLanguage('french')" class="nav-link roundLinkIcon">
+			            <img src="/design/layout/image/icon/French.png" width="25" height="25" />
+			          </a>
+			          <a href="" onclick="changeLanguage('french')" class="nav-link topBottomSlideIn">#{userSession.translate('label.common.navigation.language.french')}</a>
+			        </li>
+			
+			        <li class="nav-item mx-auto">
+			          <a href="" onclick="changeLanguage('german')" class="nav-link roundLinkIcon">
+			            <img src="/design/layout/image/icon/German.png" width="25" height="25" />
+			          </a>
+			          <a href="" onclick="changeLanguage('german')" class="nav-link topBottomSlideIn">#{userSession.translate('label.common.navigation.language.german')}</a>
+			        </li>
 			      </ul>
 			    </div>
 			  </nav>
+			  
+
 	
 		</section>
 
 		<section id="title" class="container-fluid text-center fadeInAndSlideInFromBottom">
 		
-			<h1>Aanmelden</h1>
+			<h1>#{userSession.translate('content.title.authentication')}</h1>
 			
 		</section>
 
@@ -105,7 +113,7 @@
 	
 				<div class="d-inline-block">
 	
-					<label>Gebruikersnaam</label>
+					<label>#{userSession.translate('label.page.authentication.form.username')}</label>
 					<!-- Must be a JSF inputText element -->
 					<h:inputText id="j_username" class="form-control" />
 	
@@ -116,7 +124,7 @@
 	
 				<div class="d-inline-block">
 	
-					<label>Wachtwoord</label>
+					<label>#{userSession.translate('label.page.authentication.form.password')}</label>
 					<!-- Must be a JSF inputSecret element -->
 					<h:inputSecret id="j_password" class="form-control" />
 	
@@ -126,9 +134,9 @@
 				<br /> 
 				
 				<span class="spanBorderSlideIn">
-					<button type="submit" class="buttonBorderSlideIn">Verzenden</button>
+					<button type="submit" class="buttonBorderSlideIn">#{userSession.translate('label.common.action.submit')}</button>
 				</span>
-	
+				
 			</form>
 	
 		</section>
