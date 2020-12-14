@@ -9,6 +9,9 @@ axios.defaults.headers.post['Content-Type'] = 'application/json'; // Not set by 
 // PrimeVue Core: enhanced components with theming and icons				-------------------------------------------------------------------------------- */
 import 'primevue/resources/primevue.min.css';
 
+// PrimeVue Config: configure global variables
+import PrimeVue from 'primevue/config';
+
 // PrimeVue Components
 import toast from 'primevue/toast';
 import toastService from 'primevue/toastservice';
@@ -72,6 +75,12 @@ export default async function load(content, title, member) {
 	const contentApp = createApp(defineAsyncComponent(() => import('@/page/' + content)))
 
 	contentApp.use(toastService);
+	contentApp.use(PrimeVue, {
+		locale: {
+			dateFormat: "dd/mm/yy",
+			monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Dezzember"]
+		}
+	});
 	contentApp.component('Toast', toast);
 
 	contentApp.mount('#content')

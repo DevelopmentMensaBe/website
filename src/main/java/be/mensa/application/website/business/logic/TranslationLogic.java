@@ -9,10 +9,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import be.mensa.application.website.data.operator.common.TranslationOperator;
 import be.mensa.application.website.data.schema.fixed.Language;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -27,6 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @Startup
 @Singleton
 @Path("translation")
+@Api(tags = { "translation" })
 public class TranslationLogic {
 
 	@Inject
@@ -34,10 +35,10 @@ public class TranslationLogic {
 
 	@GET
 	@Path("{language}/{name}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response translateRequest(@PathParam(value = "name") String name, @PathParam(value = "language") String language) {
+	@Produces(MediaType.TEXT_PLAIN)
+	public String translateRequest(@PathParam(value = "name") String name, @PathParam(value = "language") String language) {
 
-		return Response.ok().entity(translate(name, Language.valueOf(language))).header("Access-Control-Allow-Origin", "*").build();
+		return translate(name, Language.valueOf(language));
 	}
 
 	/**
@@ -53,28 +54,12 @@ public class TranslationLogic {
 
 		var translation = translationOperator.get().translate(name);
 
-		var translatedText = "";
-
-		switch (language) {
-
-		case english:
-			translatedText = translation.getEnglish();
-			break;
-
-		case dutch:
-			translatedText = translation.getNederlands();
-			break;
-
-		case french:
-			translatedText = translation.getFrancais();
-			break;
-
-		case german:
-			translatedText = translation.getDeutsch();
-			break;
-		}
-
-		return translatedText;
+		return switch (language) {
+		case english -> translation.getEnglish();
+		case dutch -> translation.getNederlands();
+		case french -> translation.getFrancais();
+		case german -> translation.getDeutsch();
+		};
 	}
 
 }

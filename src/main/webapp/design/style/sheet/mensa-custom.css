@@ -57,6 +57,7 @@ footer {
   font-family: title;
   border-top: 0.03em solid #5e4c41;
   padding: 1em;
+  margin-top: 1rem;
 }
 
 /* Needed for sticky footer */

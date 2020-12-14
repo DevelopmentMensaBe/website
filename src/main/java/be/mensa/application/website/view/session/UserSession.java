@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.Response;
 
 import be.mensa.application.website.business.logic.TranslationLogic;
 import be.mensa.application.website.data.schema.fixed.Language;
@@ -45,11 +44,9 @@ public class UserSession implements Serializable {
 	@GET
 	@Path("logIn")
 	@PermitAll
-	public Response logIn() {
+	public void logIn() {
 
 		loggedIn = true;
-
-		return Response.ok().header("Access-Control-Allow-Origin", "*").build();
 	}
 
 	/**
@@ -58,9 +55,9 @@ public class UserSession implements Serializable {
 	@GET
 	@Path("checkLoggedIn")
 	@PermitAll
-	public Response checkLoggedIn() {
+	public boolean checkLoggedIn() {
 
-		return Response.ok().entity(loggedIn).header("Access-Control-Allow-Origin", "*").build();
+		return loggedIn;
 	}
 
 	/**

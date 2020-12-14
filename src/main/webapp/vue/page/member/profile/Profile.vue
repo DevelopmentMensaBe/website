@@ -21,7 +21,7 @@
 				<label>{{label.lastName}}</label>
 				<inputText v-model="user.person.lastName" />
 			</div>
-			<div class="p-field p-col-12">
+			<!-- <div class="p-field p-col-12">
 				<label>{{label.birthDate}}</label>
 				<calendar
 					v-model="user.person.birthDate"
@@ -30,7 +30,7 @@
 					:yearNavigator="true"
 					yearRange="1900:2000"
 				/>
-			</div>
+			</div>-->
 			<div class="p-field p-col-12">
 				<label>{{label.street}}</label>
 				<inputText id="street" type="text" v-model="user.person.contact.address.street" />
@@ -62,7 +62,7 @@ import axios from "axios";
 import { translate } from "@/component/common/LanguageLogic.js";
 
 import inputText from "primevue/inputtext";
-import calendar from "primevue/calendar";
+// import calendar from "primevue/calendar";
 
 export default {
 	data() {
@@ -86,8 +86,8 @@ export default {
 		};
 	},
 	components: {
-		inputText,
-		calendar
+		inputText
+		// calendar
 	},
 	created() {
 		axios.get("user/loggedInUser").then(resp => (this.user = resp.data));
