@@ -2,8 +2,8 @@ package be.mensa.application.website.data.operator.common;
 
 import javax.enterprise.context.Dependent;
 
-import be.mensa.application.website.data.schema.dynamic.common.Translation;
-import be.mensa.application.website.data.schema.dynamic.common.Translation_;
+import be.mensa.module.schema.common.Translation;
+import be.mensa.module.schema.common.Translation_;
 import ci.intern.module.database.operator.main.MainOperator;
 
 /**

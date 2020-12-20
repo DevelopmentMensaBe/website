@@ -11,7 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import be.mensa.application.website.data.operator.common.TranslationOperator;
-import be.mensa.application.website.data.schema.fixed.Language;
+import be.mensa.module.core.enums.WebsiteLanguage;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 
@@ -38,7 +38,7 @@ public class TranslationLogic {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String translateRequest(@PathParam(value = "name") String name, @PathParam(value = "language") String language) {
 
-		return translate(name, Language.valueOf(language));
+		return translate(name, WebsiteLanguage.valueOf(language));
 	}
 
 	/**
@@ -48,17 +48,17 @@ public class TranslationLogic {
 	 * @param language
 	 * @return translated text
 	 */
-	public String translate(String name, Language language) {
+	public String translate(String name, WebsiteLanguage websiteLanguage) {
 
 		log.info(name);
 
 		var translation = translationOperator.get().translate(name);
 
-		return switch (language) {
+		return switch (websiteLanguage) {
 		case english -> translation.getEnglish();
-		case dutch -> translation.getNederlands();
-		case french -> translation.getFrancais();
-		case german -> translation.getDeutsch();
+		case dutch -> translation.getDutch();
+		case french -> translation.getFrench();
+		case german -> translation.getGerman();
 		};
 	}
 

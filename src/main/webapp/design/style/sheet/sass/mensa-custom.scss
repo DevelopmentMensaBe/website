@@ -28,7 +28,8 @@ Html elements
 body {
 	color: $primary;
 	font-family: mensa;
-	background: url('/design/layout/image/background/black-pattern.jpg') no-repeat center center fixed;
+//	background: url('/design/layout/image/background/background.jpg') no-repeat center center fixed;
+	background: white;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -42,7 +43,7 @@ body {
 /* Style the navigation bar */
 nav {
 	border-bottom: solid .02em $primary;
-	background: linear-gradient(to bottom, $secondary, 35%, transparent), url('/design/layout/image/background/black-pattern.jpg') no-repeat center center fixed;
+	background: white;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;

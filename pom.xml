@@ -20,6 +20,7 @@
 		<datasource>datasource-local</datasource>
 		<auth-method>FORM</auth-method>
 		<schema-generation>drop-and-create</schema-generation>
+		<api.documentation>docs</api.documentation>
 
 		<maven.compiler.target>14</maven.compiler.target>
 		<maven.compiler.source>14</maven.compiler.source>
@@ -83,6 +84,7 @@
 			<version>3.4.4.Final</version>
 		</dependency>
 
+		<!-- Swagger UI -->
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-jaxrs</artifactId>
@@ -232,12 +234,13 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/${project.build.finalName}/docs</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${project.build.directory}/swagger-ui-master/dist</directory>
 								</resource>
 							</resources>
+							<!-- Swagger UI available here, for instance: localhost:8080/docs -->
+							<outputDirectory>${project.build.directory}/${project.build.finalName}/${api.documentation}</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
@@ -256,7 +259,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<file>${project.build.directory}/website/docs/index.html</file>
+					<file>${project.build.directory}/${project.build.finalName}/${api.documentation}/index.html</file>
 					<replacements>
 						<replacement>
 							<token>https://petstore.swagger.io/v2/swagger.json</token>

@@ -6,7 +6,7 @@ import javax.enterprise.event.Observes;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import be.mensa.application.website.business.common.ApplicationInformation;
+import be.mensa.module.core.ApplicationConstants;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,10 +25,10 @@ import lombok.extern.slf4j.Slf4j;
 public class Web {
 
 	@Getter
-	final String name = ApplicationInformation.BUSINESS_APPLICATION_NAME;
+	final String name = ApplicationConstants.BUSINESS_APPLICATION_NAME;
 
 	@Getter
-	final String technicalName = ApplicationInformation.DEVELOPMENT_APPLICATION_NAME;
+	final String technicalName = ApplicationConstants.DEVELOPMENT_APPLICATION_NAME;
 
 //	@Getter
 //	Set<Reference> references;

@@ -2,8 +2,8 @@
 	<main>
 		<form class="p-fluid p-formgrid p-grid mx-auto" @submit.prevent="save">
 			<div class="p-field p-col-12">
-				<label for="mensaId">{{label.mensaId}}:&nbsp;</label>
-				<label id="mensaId">{{user.mensaId}}</label>
+				<label for="mensaId">{{label.username}}:&nbsp;</label>
+				<label id="mensaId">{{user.username}}</label>
 			</div>
 			<div class="p-field p-col-12">
 				<label for="role">{{label.role}}:&nbsp;</label>
@@ -68,7 +68,7 @@ export default {
 	data() {
 		return {
 			label: {
-				mensaId: null,
+				username: null,
 				role: null,
 				language: null,
 				firstName: null,
@@ -94,7 +94,7 @@ export default {
 
 		const label = "label.page.profile.form.";
 
-		translate(label + "mensaId").then(t => (this.label.mensaId = t.data));
+		translate(label + "username").then(t => (this.label.username = t.data));
 		translate(label + "role").then(t => (this.label.role = t.data));
 		translate(label + "language").then(t => (this.label.language = t.data));
 		translate(label + "firstName").then(
@@ -119,21 +119,25 @@ export default {
 				if (this.user.person.birthDate) {
 					var temp = JSON.stringify(this.user.person.birthDate);
 
+					console.log(temp);
+
 					if (temp.includes("-")) {
 						const day = temp.substring(9, 11);
 						const month = temp.substring(6, 8);
 						const year = temp.substring(1, 5);
 						this.user.person.birthDate =
 							day + "/" + month + "/" + year;
+					} else {
+						this.user.person.birthDate = null;
 					}
-				} else {
-					this.$toast.add({
-						severity: "error",
-						summary: "AI :(",
-						detail: "Choose a birth date in the form of dd/mm/yyyy",
-						life: 3000
-					});
-					return;
+					// } else {
+					// 	this.$toast.add({
+					// 		severity: "error",
+					// 		summary: "AI :(",
+					// 		detail: "Choose a birth date in the form of dd/mm/yyyy",
+					// 		life: 3000
+					// 	});
+					// 	return;
 				}
 
 				axios

@@ -16,7 +16,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
 import be.mensa.application.website.business.logic.TranslationLogic;
-import be.mensa.application.website.data.schema.fixed.Language;
+import be.mensa.module.core.enums.WebsiteLanguage;
 
 /**
  * Represents all security data for a user during a session.
@@ -80,8 +80,7 @@ public class UserSession implements Serializable {
 
 	public String translate(String name) {
 
-		return translationLogic.translate(name, Language.valueOf(getCookie("language")));
-
+		return translationLogic.translate(name, WebsiteLanguage.valueOf(getCookie("language")));
 	}
 
 	public String getCookie(String name) {

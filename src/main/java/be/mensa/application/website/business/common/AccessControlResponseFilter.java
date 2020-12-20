@@ -12,6 +12,8 @@ public class AccessControlResponseFilter implements ContainerResponseFilter {
 
 	public void filter(ContainerRequestContext containerRequestContext, ContainerResponseContext containerResponseContext) throws IOException {
 
+//		containerResponseContext.setEntity(containerResponseContext.getEntity(), containerResponseContext.getEntityAnnotations(), MediaType.APPLICATION_JSON_TYPE);
+
 		containerResponseContext.getHeaders().add("Access-Control-Allow-Origin", "*");
 //		containerResponseContext.getHeaders().add("Access-Control-Allow-Methods", "*");
 

@@ -17,7 +17,7 @@ import toast from 'primevue/toast';
 import toastService from 'primevue/toastservice';
 
 // PrimeVue Theme															-------------------------------------------------------------------------------- */
-import 'primevue/resources/themes/luna-blue/theme.css';
+import 'primevue/resources/themes/nova-accent/theme.css';
 
 // PrimeVue Icons															-------------------------------------------------------------------------------- */
 import 'primeicons/primeicons.css';

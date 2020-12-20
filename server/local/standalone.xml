@@ -357,7 +357,7 @@
             <security-realms>
                 <identity-realm name="local" identity="$local"/>
                 <jdbc-realm name="defaultJdbcRealm">
-                    <principal-query sql="select password, role from applicationuser where username=?" data-source="default-datasource-pool">
+                    <principal-query sql="select password, role from member where username=?" data-source="default-datasource-pool">
                         <attribute-mapping>
                             <attribute to="groups" index="2"/>
                         </attribute-mapping>

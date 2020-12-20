@@ -1,11 +1,11 @@
 <template>
-	<main>
+	<main class="mx-auto w-50">
 		<div>
 			<!-- <label class="mr-2">Filter:</label>
 			<dropdown v-model="value" :options="filter" optionLabel="name" placeholder="Select" />-->
 			<br />
 			<br />
-			<FullCalendar :events="events" :options="options" />
+			<FullCalendar :events="events" :options="options" class="calendar" />
 			<span class="spanBorderSlideIn">
 				<button class="buttonBorderSlideIn">{{subscribeButtonLabel}}</button>
 			</span>
@@ -22,6 +22,12 @@
 		</GoogleMap>-->
 	</main>
 </template>
+
+<style scoped>
+.calendar {
+	height: 25rem;
+}
+</style>
 
 <script>
 import { translate } from "@/component/common/LanguageLogic.js";
