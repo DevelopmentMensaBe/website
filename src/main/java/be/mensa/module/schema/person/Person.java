@@ -50,7 +50,7 @@ public class Person extends MainTable {
 	@JsonbDateFormat(ApplicationConstants.DATE_FORMAT)
 	LocalDate birthDate;
 
-	String nickName, bloodType, profession, education;
+	String bloodType, profession, education;
 
 	Boolean married;
 

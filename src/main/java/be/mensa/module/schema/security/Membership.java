@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.OneToOne;
 
 import be.mensa.module.core.enums.MemberShipStatus;
 import be.mensa.module.core.enums.PaymentMethod;
@@ -17,6 +18,9 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Membership extends MainTable {
+
+	@OneToOne
+	Member member;
 
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
